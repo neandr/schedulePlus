@@ -1,9 +1,7 @@
 ## *schedule+*
-
-<a href="https://neandr.github.io/schedulePlus/de.index.html">[Deutsche Beschreibung]</a></small></h2>
-
 Switching lighting flexibly via Web App
 
+<a href="https://neandr.github.io/schedulePlus/de.index.html">[Deutsche Beschreibung]</a></small></h2>
 <hr>
 
 *schedule+* enables time-controlled switching of devices simply with the help of a web/browser dialog on the smartphone, tablet or PC. <strong><em>schedule+</em></strong> supports WLAN/Tasmota based devices such as Sonoff
