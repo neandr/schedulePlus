@@ -24,7 +24,7 @@
     <!-- $$$content$$$ -->
 
     <h2 id="scheduleplus">
-      <em><a class="noUnder" href="de.index">
+      <em><a class="noUnder" href="index.html">
           <span style="display: flex;align-items: center;">
             <img src="icon/schedulePlus.icon.png"
             class="scheduleIcon">schedule+<small>  &nbsp; Übersicht</small>
@@ -72,7 +72,7 @@
     <h3 id="overview" style="page-break-before:always"><em><strong>schedule+</strong></em> -- Startseite / Geräte im WLAN</h3>
     <div>Abb.1 zeigt die Startseite der App mit den im WLAN verfügbaren Geräten mit seinen Namen und seinen jeweiligen Zuständen. Schaltgeräte werden mit einem grünen=EIN oder roten=AUS Schalter dargestellt, Dimmer mit einem Schieber. Diese Elemente dienen auch zum EIN/AUS Schalten bzw. zur Veränderung der Dimmhelligkeit.</div>
 
-    <div>&nbsp; &nbsp; &nbsp; <img alt="schedule+ Start Page" src="../pict/schedulePlusOverview1.png" style="width:90%"></div>
+    <div>&nbsp; &nbsp; &nbsp; <img alt="schedule+ Start Page" src="pict/schedulePlusOverview1.png" style="width:90%"></div>
 
     <div style="margin-left: 25px;"><strong> Startseite - Abb.1</strong></div>
     <div>&nbsp; &nbsp; &nbsp; Erläuterungen
@@ -95,7 +95,7 @@
     <div>Die <strong><em>schedule+</em></strong> App hat auf allen Seiten eine Kopfzeile, diese ist eine Menü-Schaltfläche zum Öffnen des 'Haupt Menü'. Das geöffnete Menü bietet den Zugang zu den <strong><em>schedule+</em></strong> Funktionen, so geht es von hier immer wieder zurück zur Startseite [Übersicht].
     </div>
 
-    <div> <img alt="schedule+ Start Page" src="../pict/MainMenuTip.png" style="margin-left:25px; width:70%"> </div>
+    <div> <img alt="schedule+ Start Page" src="pict/MainMenuTip.png" style="margin-left:25px; width:70%"> </div>
     <div style="margin-left: 25px;"><strong> Haupt Menü - Abb.2</strong>
     </div>
 
@@ -129,7 +129,7 @@
     <h4 id="dayPlanDefinition" style="page-break-before:always">Tagesplan</h4>
     <div>Ein Tagesplan besteht aus einer Reihe von zusammengefassten Jobs. Die Tagesplan Definition bezieht sich jeweils auf einen Tagesablauf und wird unter einem beliebigen Namen als Text Datei (mit Erweiterung '.ini') abgespeichert -- z.B. <span class="mono">'schedulePlus.ini ▼'</span>.</div>
 
-    <div>&nbsp; &nbsp; &nbsp; <img alt="schedule+ Tagesplan Beispiel" style="width:70%" src="../pict/dayplan.png"></div>
+    <div>&nbsp; &nbsp; &nbsp; <img alt="schedule+ Tagesplan Beispiel" style="width:70%" src="pict/dayplan.png"></div>
 
     <div style="margin-left: 25px;"><strong>Tagesplan Beispiel - Abb.3</strong></div>
 
@@ -150,7 +150,7 @@
       Die Kopfzeile der Tagesplan Tabelle dient für weitere Funktionsaufrufe:
     </div>
 
-    <div>&nbsp; &nbsp; &nbsp; <img alt="schedule+ Tagesplan Kopfzeile" style="width:70%" src="../pict/schedulefileactions.png"></div>
+    <div>&nbsp; &nbsp; &nbsp; <img alt="schedule+ Tagesplan Kopfzeile" style="width:70%" src="pict/schedulefileactions.png"></div>
 
     <ul>
       <p style="margin-left: -20px;"><em> In der Mitte die Anzeige des aktuellen Tagesplanes:</em></p>
@@ -170,7 +170,7 @@ Oberhalb der Tagesplan Tabelle stehen die aktuellen Sonnenauf- und -untergangsze
     <hr>
 
     <h4 id="weekplan" style="page-break-before:always">Wochenplan</h4>
-    <div>&nbsp; &nbsp; &nbsp; <img alt="Wochenplan" src="../pict/weekPlan.png" style="width:70%"></div>
+    <div>&nbsp; &nbsp; &nbsp; <img alt="Wochenplan" src="pict/weekPlan.png" style="width:70%"></div>
     <div>Der Wochenplan definiert für jeden Wochentag unterschiedliche Tagespläne. Ist für einen Wochentag kein Tagesplan definiert (oder ist er nicht verfügbar), wird der Plan des vorherigen Tages weiterverwendet. So lassen sich z.B. unterschiedliche Pläne
       für die Tage Montag bis Freitag und für das Wochenende angeben.</div>
 
@@ -178,7 +178,7 @@ Oberhalb der Tagesplan Tabelle stehen die aktuellen Sonnenauf- und -untergangsze
 
     <h4 id="logfiles">Log Dateien</h4>
 
-    <div>&nbsp; &nbsp; &nbsp; <img alt="Day Logs" src="../pict/logfiles.png" style="width:70%"></div>
+    <div>&nbsp; &nbsp; &nbsp; <img alt="Day Logs" src="pict/logfiles.png" style="width:70%"></div>
     <div>Die Log Datei Seite lädt eine Liste der <strong>[ ▸ Heute]</strong> bereits ausgeführten Jobs. <br />
       Über die Wochentage lassen sich die Aufzeichnungen an den vorangegangenen Wochentagen aufrufen. Diese Listen werden kontinuierlich täglich im Wochenrythmus geschrieben. <br />
     </div>

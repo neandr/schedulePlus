@@ -47,23 +47,23 @@
 
   <h4>OS Installation on a SDcard</h4>
 
-  <div>&nbsp; &nbsp; &nbsp; <img alt="Imager1" src="../pict/Imager_1.png" width="400"></div>
+  <div>&nbsp; &nbsp; &nbsp; <img alt="Imager1" src="pict/Imager_1.png" width="400"></div>
 
   <p>Insert the SDcard (e.g with 16 GB capacity, recommanded: use fat32 formatting) into an SDcardReader on your desktop and start.<br>
 
     With the Imager select an OS like "Raspberry PI OS (32-bit) 0.8 GB / Bullseye" or
     "Raspberry PI OS Lite (32-bit) / Bullseye no desktop 0.3 GB <br>
   </p>
-  <div>&nbsp; &nbsp; &nbsp; <img alt="Imager3" src="../pict/Imager_3.png" width="366"></div>
+  <div>&nbsp; &nbsp; &nbsp; <img alt="Imager3" src="pict/Imager_3.png" width="366"></div>
 
   <p>and the storage device (shows a 16 GB with some 'old' installation,
     which will be overwritten)<br>
   </p>
-  <div>&nbsp; &nbsp; &nbsp; <img alt="Imager2" src="../pict/Imager_2.png" width="400"></div>
+  <div>&nbsp; &nbsp; &nbsp; <img alt="Imager2" src="pict/Imager_2.png" width="400"></div>
 
   <p>Before writing to the Storage Device, take a look at the <b>Advanced Options</b> that are available with the cogwheel
   </p>
-  <div>&nbsp; &nbsp; &nbsp; <img alt="Imager4" src="../pict/Imager_4.png" width="427"></div>
+  <div>&nbsp; &nbsp; &nbsp; <img alt="Imager4" src="pict/Imager_4.png" width="427"></div>
 
   <p>Set the following :</p>
   <p>-- hostname (default 'pi')<br>
@@ -77,7 +77,7 @@
   <p>Stay tuned .. writing and reviewing the 0.3 GB Lite version took about 6 minutes and is finally finished with:
     <br>
   </p>
-  <div>&nbsp; &nbsp; &nbsp; <img alt="Imager5" src="../pict/Imager_5.png" width="430"></div>
+  <div>&nbsp; &nbsp; &nbsp; <img alt="Imager5" src="pict/Imager_5.png" width="430"></div>
 
   <p>Remove SDcard, install it into the RPI and power it on.</p>
 

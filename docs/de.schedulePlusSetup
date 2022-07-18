@@ -16,7 +16,7 @@
   <div class="schedule header">
 
     <h2 id="scheduleplus">
-      <em><a class="noUnder" href="de.index">
+      <em><a class="noUnder" href="index.html">
           <span style="display: flex;align-items: center;">
             <img src="icon/schedulePlus.icon.png" class="scheduleIcon">schedule+</span>
         </a></em>
