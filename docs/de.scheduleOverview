@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--  CSS Setup -->
+  <link rel="stylesheet" href="scheduleDocs.css">
+  <style type="text/css">
+    body {
+      margin-left: 4%;
+      margin-right: 8%;
+    }
+  </style>
+
+  <title>schedule+  Übersicht</title> <!-- 2022-04-18 -->
+
+</head>
+
+<body>
+
+  <div>
+    <!-- $$$content$$$ -->
+
+    <h2 id="scheduleplus">
+      <em><a class="noUnder" href="index.html">
+          <span style="display: flex;align-items: center;">
+            <img src="icon/schedulePlus.icon.png"
+            class="scheduleIcon">schedule+<small>  &nbsp; Übersicht</small>
+          </span>
+        </a></em>
+    </h2>
+
+    <div style="right: 4%;">
+      <div style="text-align: right; font-size: .8em; margin-top: -4em;
+			     padding-bottom: 2em;">
+        <a href="en.scheduleOverview">
+          <img title="English" src="icon/flagUS.png" align="bottum"></a>
+      </div>
+
+      <div style="text-align: right; font-size: .8em; margin-top: -2.6em;">
+        <em>2022-06-23</em>
+      </div>
+    </div>
+    <h3 style="margin-top:-10px"><em>Beleuchtung flexibel schalten mit WLAN/Tasmota</em> </h3>
+
+    <hr>
+    <br>
+
+
+    <div><strong><em>schedule+</em></strong> ermöglicht das zentrale Schalten und Einstellen von WLAN-fähigen Geräten über mobile Endgeräte wie Smartphones/Tablets oder auch am PCs.
+      <br>
+      Schaltzeiten und Dimmen von Beleuchtungskörpern lassen sich frei definieren. Zeitangaben können sich an Sonnenaufgang/Sonnenuntergang orientieren und mit zufälligen Zeitspannen variieren. Solche Einstellungen werden auch zu Tages- und Wochenplänen zusammengefasst.
+      <br>
+
+      Mit derart gestalteten Schaltplänen wird Aktivität im Haus auch bei Abwesenheit simuliert.
+      <br>
+      Die <strong><em>schedule+</em></strong> Funktionen sind auf mehreren WEB-Seiten gruppiert und bieten Einstellungen, Bedienung, Meldungsverfolgung oder den Aufruf der Dokumentation mit einer einfach zu bedienenden Menüsteuerung.
+    <br>
+
+    <strong><em>schedule+</em></strong> richtet sich an Nutzer, die Smartphones oder PCs als Zentrale zum Schalten und Einstellen der Hausinstallation verwenden möchten und gleichzeitig in der Lage sein wollen, die Einstellungen einfach zu
+      ändern - beispielsweise den Tagesplan.
+    </div>
+    <br>
+    <div><strong><em>schedule+</em></strong> läuft als Anwendung auf einem RaspberryPI (RPI).
+      Unterstützte WLAN Geräte, Installation und Einrichtung <a href="xx"> ▸ siehe hier </a>
+    </div>
+
+    <hr>
+
+    <h3 id="overview" style="page-break-before:always"><em><strong>schedule+</strong></em> -- Startseite / Geräte im WLAN</h3>
+    <div>Abb.1 zeigt die Startseite der App mit den im WLAN verfügbaren Geräten mit seinen Namen und seinen jeweiligen Zuständen. Schaltgeräte werden mit einem grünen=EIN oder roten=AUS Schalter dargestellt, Dimmer mit einem Schieber. Diese Elemente dienen auch zum EIN/AUS Schalten bzw. zur Veränderung der Dimmhelligkeit.</div>
+
+    <div>&nbsp; &nbsp; &nbsp; <img alt="schedule+ Start Page" src="pict/schedulePlusOverview1.png" style="width:90%"></div>
+
+    <div style="margin-left: 25px;"><strong> Startseite - Abb.1</strong></div>
+    <div>&nbsp; &nbsp; &nbsp; Erläuterungen
+    <ul>
+      <li><em><strong>schedule+</strong> Kopfzeile </em> -- <span> erscheint auf allen WEB-Seiten und bietet zwei Funktionen: den Zugang zum Haupt Menü und den Tagesplan Schalter</span></li>
+      <li><em>zum Haupt Menü</em> -- durch Antippen oder MouseClick öffnet sich das <a href="#menu"> ▸ Haupt Menü </a></li>
+      <li><em>Tagesplan Schalter</em> -- vorübergehendes Suspendieren des aktiven Tagesplanes mit dem zeitgesteuerten Schalten/Dimmen. </li>
+
+      <li><em>Hinweiszeile</em> -- In der Zeile rechts wird angezeigt, welcher "Tagesplan" geladen und aktiv ist.</li>
+      <li><em>Schaltgerät EIN/AUS</em> -- zeigt den aktuellen Zustand, Schalten durch Antippen oder MouseClick</li>
+      <li><em>Dimmen mit Schieber</em> -- der Schieber zeigt den Helligkeitswert, Ändern durch Ziehen am Knopf</li>
+      <li><em>Links zu Log Dateien</em> -- Aufruf verschiedener Ereignisaufzeichnungen</li>
+      <li><em>URL der Anwendung</em> -- siehe Installation/Einrichtung</li>
+    </ul>
+    </div>
+
+    <hr>
+
+    <h4 id="menu" style="page-break-before:always"><em><strong>schedule+</strong></em> Haupt Menü</h4>
+    <div>Die <strong><em>schedule+</em></strong> App hat auf allen Seiten eine Kopfzeile, diese ist eine Menü-Schaltfläche zum Öffnen des 'Haupt Menü'. Das geöffnete Menü bietet den Zugang zu den <strong><em>schedule+</em></strong> Funktionen, so geht es von hier immer wieder zurück zur Startseite [Übersicht].
+    </div>
+
+    <div> <img alt="schedule+ Start Page" src="pict/MainMenuTip.png" style="margin-left:25px; width:70%"> </div>
+    <div style="margin-left: 25px;"><strong> Haupt Menü - Abb.2</strong>
+    </div>
+
+    <div>
+      Das geöffnete 'Haupt Menü' zeigt im ersten Abschnitt Menüpunkte zu den wesentlichen Funktionsbereichen:
+      <a href="#overview"> ▸ Übersicht</a>, <a href="#timeSwitching"> ▸ Tagesplan</a>, <a href="#weekplan"> ▸ Wochenplan</a>, <a href="#logfiles"> ▸ Log Dateien</a>, diese werden nachstehend beschrieben.
+      <br>
+
+      <img src="icon/marker-blue.svg" class="imgdoc"><span class="mono"> GeoDetails </span> wählt den Einsatzort der Anwendung mit seinen GeoCoordinaten aus. Dies ist wichtig, um die täglichen Zeiten für Sonnenaufgang und -untergang zu ermitteln.
+      <br>
+
+      <span class="mono">🇩🇪 Deutsch</span> und <span class="mono">🇺🇸 English</span> setzen die Sprachenauswahl für die Benutzeroberfläche und Dokumentationssprache.
+    </div>
+
+    <hr>
+
+    <h3 id="timeSwitching"><em><strong>Tagesplan -- Arbeiten mit Zeitplan</strong></em></h3>
+    <div><strong><em>schedule+</em></strong> bietet ein einfaches menügesteuertes Konzept für die Definition von Tagesplänen, die aus einer Zusammenstellung von Schaltvorgängen (gen. Jobs) bestehen.</div>
+
+    <h4 id="jobDefinition">Job Definition</h4>
+    <div>Mit <strong><em>schedule+</em></strong> definiert der Nutzer zu welcher Zeit ein Gerät geschaltet werden soll -- dies wird als Job bezeichnet.
+      <br>
+
+      Die Zeit Definition eines 'Jobs' erfolgt mit absoluter Zeitangabe, relativ zu einer vorher definierten Zeit (z.B. um ein Gerät nach einer bestimmten Zeit auszuschalten) oder auch relativ zu <code>Sonnenaufgang / Sonnenuntergang</code>. Alle
+      Zeitangaben sind variabel mit Zufallszeiten.
+      <br>
+
+      Mehrere Aktionen für dasselbe Gerät können als ein Job definiert werden.
+    </div>
+
+    <h4 id="dayPlanDefinition" style="page-break-before:always">Tagesplan</h4>
+    <div>Ein Tagesplan besteht aus einer Reihe von zusammengefassten Jobs. Die Tagesplan Definition bezieht sich jeweils auf einen Tagesablauf und wird unter einem beliebigen Namen als Text Datei (mit Erweiterung '.ini') abgespeichert -- z.B. <span class="mono">'schedulePlus.ini ▼'</span>.</div>
+
+    <div>&nbsp; &nbsp; &nbsp; <img alt="schedule+ Tagesplan Beispiel" style="width:70%" src="pict/dayplan.png"></div>
+
+    <div style="margin-left: 25px;"><strong>Tagesplan Beispiel - Abb.3</strong></div>
+
+    <div>Der 'Aktuelle Tagesplan' zeigt als Tabelle in den Zeilen die Jobs, d.h. die Schaltzeiten der Geräte mit ihren geplanten Funktionen (EIN/AUS/SET/NEW).
+
+      <div style="margin-left: 12px;"><em>Hinweis -- Beim Aufruf des 'Aktuellen Tagesplans' werden nur noch die Jobs angezeigt, die an diesem Tag ausstehen.
+      </em></div>
+      <div>
+        Mit dem <img src="icon/entry-delete.svg" class="imgdoc"> Zeichen rechts in der Zeile lässt sich der Job zur Ausführung löschen.
+
+        <div style="margin-left: 12px;"><em>Hinweis -- Die Löschung erfolgt nur für den aktiven Tagesplan, die Tagesplan (.ini) Datei wird dabei nicht geändert!</em>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <div>
+      Die Kopfzeile der Tagesplan Tabelle dient für weitere Funktionsaufrufe:
+    </div>
+
+    <div>&nbsp; &nbsp; &nbsp; <img alt="schedule+ Tagesplan Kopfzeile" style="width:70%" src="pict/schedulefileactions.png"></div>
+
+    <ul>
+      <p style="margin-left: -20px;"><em> In der Mitte die Anzeige des aktuellen Tagesplanes:</em></p>
+      <li>hier im Beispiel: <span class="mono">'aussen.ini ▼',</span> dient auch als Auswahlmenü zum Laden anderer Tagespläne</li>
+      <p style="margin-left: -20px;"><em> Links zum Aktualisieren des Tagesplanes:</em></p>
+      <li><img src="icon/refresh.svg" class="imgdoc"> Der Tagesplan wird aktualisiert mit den noch anstehenden Jobs des Tages
+      </li>
+      <p style="margin-left: -20px;"><em> Rechts zur Bearbeitung des Tagesplanes:</em></p>
+      <li><img src="icon/edit.svg" class="imgdoc"> Aufruf des Editor zur Bearbeitung des angezeigten Tagesplanes</li>
+      <li><img src="icon/plus.svg" class="imgdoc"> Hinzufügen eines Jobs nur zum aktiven Tagesplan, aber nicht zur (.ini)Datei. Somit hat dieser Job nur Gültigkeit für den aktuellen Tag; generelle Änderungen am Tagesplan erfolgt nur mit dem <img src="icon/edit.svg" class="imgdoc">Editor.</li>
+    </ul>
+
+    <div>
+Oberhalb der Tagesplan Tabelle stehen die aktuellen Sonnenauf- und -untergangszeiten, die täglich mit der lokalen GeoLocation berechnet werden. Über das Symbol <img src="icon/marker-blue.svg" class="imgdoc"><span class="mono"> GeoLocation </span> wird eine Karte aufgerufen, auf der die aktuelle Geolocation überprüft und ggf. eingestellt werden kann.
+    </div>
+
+    <hr>
+
+    <h4 id="weekplan" style="page-break-before:always">Wochenplan</h4>
+    <div>&nbsp; &nbsp; &nbsp; <img alt="Wochenplan" src="pict/weekPlan.png" style="width:70%"></div>
+    <div>Der Wochenplan definiert für jeden Wochentag unterschiedliche Tagespläne. Ist für einen Wochentag kein Tagesplan definiert (oder ist er nicht verfügbar), wird der Plan des vorherigen Tages weiterverwendet. So lassen sich z.B. unterschiedliche Pläne
+      für die Tage Montag bis Freitag und für das Wochenende angeben.</div>
+
+    <hr>
+
+    <h4 id="logfiles">Log Dateien</h4>
+
+    <div>&nbsp; &nbsp; &nbsp; <img alt="Day Logs" src="pict/logfiles.png" style="width:70%"></div>
+    <div>Die Log Datei Seite lädt eine Liste der <strong>[ ▸ Heute]</strong> bereits ausgeführten Jobs. <br />
+      Über die Wochentage lassen sich die Aufzeichnungen an den vorangegangenen Wochentagen aufrufen. Diese Listen werden kontinuierlich täglich im Wochenrythmus geschrieben. <br />
+    </div>
+
+    <div><em>Über die Seite "Übersicht" lassen sich alle erfolgten Job Ausführungen und weitere Details abrufen (siehe oben).
+      </em></div>
+    <hr>
+
+  </body>
+
+  </html>

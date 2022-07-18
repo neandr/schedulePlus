@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--  CSS Setup -->
+  <link rel="stylesheet" href="scheduleDocs.css">
+
+  <title>schedule+ - Setup</title> <!-- 2022-07-15 -->
+
+</head>
+
+<body>
+  <div class="schedule header">
+
+    <h2 id="scheduleplus">
+      <em><a class="noUnder" href="index.html">
+          <span style="display: flex;align-items: center;">
+            <img src="icon/schedulePlus.icon.png" class="scheduleIcon">schedule+</span>
+        </a></em>
+    </h2>
+
+    <div style="right: 4%;">
+      <div style="text-align: right; font-size: .8em; margin-top: -4em;
+			     padding-bottom: 2em;">
+        <a href="en.schedulePlusSetup">
+          <img title="English" src="icon/flagUS.png" align="bottum"></a>
+      </div>
+
+      <div style="text-align: right; font-size: .8em; margin-top: -2.6em;">
+        <em>2022-07-15</em>
+      </div>
+    </div>
+    <h3 style="margin-top:-10px"><em>Setup und Benutzer Anpassungen</em> </h3>
+    <hr>
+  </div>
+
+  <div><b><em>schedule+</em></b> ist eine App für zeitgesteuertes Schalten von <b>WLAN/Tasmota</b> basierenden Geräten; der Anwender bedient die App auf dem Smartphone, Tablet oder PC per Browser.<br>
+    <!-- <em>schedule+</em> ist Python3 Programm das auf einem <b>RaspberryPI (RPI)</b> installiert wird.  -->
+  </div>
+
+
+
+  <h3>Voraussetzungen </h3>
+  <div>
+    <b><em>schedule+</em></b> ist ein Python3 Programm das einen <b>RaspberryPI (RPI)</b> mit lauffähigem Betriebssystem und Internet Zugriff erfordert. Es wird empfohlen das <b>Raspbian OS</b> (Vers.11 Bullseye oder Vers.10 Buster) zu verwenden.
+    <br>
+    Die Raspbian OS Installation auf einer SDcard wird hervorragend unterstützt durch einen <b>Raspberry Pi Imager.</b> Eine spezielle Beschreibung des Imager Einsatzes für die <em>schedule+</em> Installation <a href="de.RaspbianImager"> ist hier
+    </a>
+    <br>
+    Für <b><em>schedule+</em></b> sind die folgenden Raspbian OS /SDcard Einstellungen wichtig:
+    <ul>
+      <li> RPI ohne Tastatur und Bildschirm erfordert 'ssh' Zugang </li>
+      <li> am Router erhält der RPI eine feste IP Adresse </li>
+      <li> der Router benötigt für die App Installation Internet Zugang (Während des normalen Betriebs ist er nur erforderlich sollte die Geolocation zu korrigieren sein)</li>
+
+      <li>die WLAN/Tasmota Geräte und der RPI müssen sich im gleich LAN/WLAN Netz befinden</li>
+      <li>für die App wird ein 'port' (z.B. '5001') festgelegt</li>
+
+      <li> die IP Adressen der WLAN/Tasmota Geräte liegen in einem zusammenhängenden Bereich (z.B. '.80' .. '.85')!
+        <br>
+        Mit Starten von <b><em>schedule+</em></b> erfolgt eine Suche der WLAN Geräte im festgelegten IP-Bereich.
+      </li>
+  </div>
+
+
+  <h3>Setup-Script -- Einrichten des RaspberryPI </h3>
+
+  <div>Nach der Raspbian OS Installation und den erforderlichen 'Update/Upgrade' ( <a href="de.RaspbianImager#update"> ▸ siehe auch hier</a>) wird das <b><em>schedule+</em> Setup-Script </b> für das Einrichten der Software Komponenten auf dem
+    RaspberryPI genutzt. Es ist von GIThub abrufbar:
+  </div>
+
+  <h4 style="margin-left: 10px">Setup-Scripts von GitHub abrufen / SHA Kontrolle</h4>
+  <div style="margin-left: 12px;">
+    <ul>
+      <li>Auf die nachstehende <b> Box </b> klicken und mit <code>[Strg] [C]</code> kopieren
+        <br />
+        <input id="code" type="text" readonly="readonly" title="Select and press [Cntrl] [C] to copy"
+          value='cd ~  &&  wget https://neandr.github.io/schedulePlus/schedulePlusSetup.sh -O schedulePlusSetup.sh 2>/dev/null && chmod 755 schedulePlusSetup.sh && ls=$(ls -lt schedulePlusSetup.sh*) && echo -e "\n$ls" && sha=$(cat schedulePlusSetup.sh | sha256sum | head -c 64) && echo "SHA RPI : $sha" &&  wget https://neandr.github.io/schedulePlus/schedulePlusSetup.sh.sha -O x.txt 2>/dev/null  && git=$(cat x.txt) && echo "SHA GIT : $git" '
+          style="width: 500px; cursor:pointer; font-weight: bold; color: #3A69A6;" onclick="this.focus();this.select();" />
+        <br />
+      </li>
+
+      <li><span>Am <b> Systemprompt des RaspberryPI </b> mit
+          <code>[Strg]</code> <code>[Hoch]</code> <code>[v]</code>&nbsp; einfügen und mit <code>[Eingabe]</code> ausführen.
+          <br>Die SHA Prüfsummen der abgerufenen Datei und der auf GIT gespeicherten werden angezeigt, z.B:
+        </span>
+        <pre style="margin-left: 15px; margin-right:15px">
+    -rw-r--r-- 1 pi pi 9750 Jan 11 11:41 schedulePlusSetup.sh
+    -rw-r--r-- 1 pi pi   65 Jan 11 11:41 schedulePlusSetup.sh.sha
+    SHA Local: 3826d3333394d............d6f96555555cbeaddf6
+    SHA GIT  : 3826d3333394d............d6f96555555cbeaddf6
+    pi@sameone:~ $
+  </pre>
+        <p>
+          Stimmen die angegebenen SHA Prüfsummen überein, kann das weitere Setup erfolgen.
+        </p>
+      </li>
+
+      <li>Verzeichnisstruktur</li>
+      <p>
+        Das Setup-Script <code class="pR">schedulePlusSetup.sh</code> wird in einem beliebigen Verzeichnis auf dem RPI installiert, z.B. wie unten gezeigt in <code class="pb">../pi</code>.
+        <br>
+        Beim Setup entsteht die folgende Verzeichnisstruktur.
+      </p>
+      <pre>   ../pi/ <span class="pB">                     Installationsverzeichnis</span>
+     |__<span class="pR">schedulePlusSetup.sh   <span class="pB">Setup-Script</span></span>
+     |__<span class="pR">schedulePlus.ZIP       <span class="pB">ev. weitere ZIP Versionen</span></span>
+     |
+     |__schedulePlus           <span class="pB">'schedulePlus' Programm Code</span>
+        |__data                <span class="pB">gespeichert und wird dort ausgeführt</span>
+        |__static
+           ... etc ...
+</pre>
+      <p>
+        Die <b><em>schedule+</em></b> Software wird in einem Verzeichnis gleichen Namens gespeichert und von dort aus ausgeführt.
+      </p>
+    </ul>
+  </div>
+
+
+  <br>
+
+  <h4 style="margin-left: 10px"><em>schedule+</em> Setup Script Ablauf</h4>
+  <div style="margin-left: 12px">
+    <ol>
+      <b>
+        <li>App Installation &nbsp; &nbsp; &nbsp; <code>./schedulePlusSetup.sh -i</code></li>
+      </b>
+      <p>
+        Auf der Konsole am Systemprompt startet der Befehl
+        <code>./schedulePlusSetup.sh -i</code> den ersten Teil der Installation.
+
+        <br>
+        Zunächst wird eine aktuelle <em>schedule+</em> ZIP Version von GIThub abgerufen, diese lokal gespeichert und nach SHA Kontrolle im Verzeichnis <em>schedule+</em> aufgelöst. Abschließend läuft die Installation der Bibliotheken.
+        <br>
+      </p>
+
+      <b>
+        <li>App Konfiguration &nbsp; &nbsp; &nbsp; <code>./schedulePlusSetup.sh -c</code></li>
+      </b>
+      <p>
+        Mit dem <code>./schedulePlusSetup.sh -c</code> Befehl startet die Benutzer spezifische Konfiguration. Dabei werden die Benutzerdaten
+        in der Datei
+        <code>../pi/schedulePlus/data/jPrefs.user.json</code>
+        mittels des Editors <code><b>'nano'</b></code> bearbeitet:
+        <br>z.B. mit
+        <textarea type="text" cols="40" rows="7" id="prefs">
+    {
+      "routerName": "router.box",
+      "port": 5004,
+      "ipfirst": 90,
+      "iplast": 98,
+      "locale": "DE"
+    }
+  </textarea>
+      </p>
+      <!--  <p><i>Hinweis: Details der Parameter siehe hier XXXX.doc</i></p> -->
+      <p>
+        Mit Editor Abschluß werden die Benutzerdaten als <code>schedulePlus/data/jPrefs.json</code> übernommen und kommen bei <em>schedule+</em> App Neustart zur Anwendung.
+      </p>
+
+      <p>
+        Die App Konfiguration stellt auch einige Software Parameter und Berechtigungen ein, dazu zählt das automatische Starten von <b><em>schedule+</em></b> beim Einschalten.
+        <br>
+        Die Konfiguration schließt ab mit dem Starten von <b><em>schedule+</em></b>, einem Protokoll und der WEB Adresse zum Öffnen auf einer Browser Seite.
+        <br>
+
+        <button style="margin-left:10px" onclick="spoiler('spoiler1')">Zeige Beispiel</button>
+
+      <pre id="spoiler1" class="spoiler" style="display:none">
+        pi@rasp4:~ $ ./schedulePlusSetup.sh -c
+         ___ schedulePlus Setup       #0.2.3.2  2022-07-11_12 ___
+                xDIR:  /home/pi
+             baseDIR:  /home
+          currentDIR:  pi
+
+          ... System konfigurieren
+
+          ... Edit 'schedulePlus/data/jPrefs.user.json'
+        {
+            "routerName": "fritz.box",
+            "port": 5004,
+            "ipfirst": 50,
+            "iplast": 54
+        }
+          ... User data changed, need App Restart
+          --- Activate 'schedulePlus'
+          --- Service setup
+          ... schedulePlus is stopped!
+
+              schedulePlus starts now ..
+                .. it needs a minute .. so wait a little ..
+          ... Starting Service for schedulePlus
+
+               Open 'schedulePlus' in the browser with:
+
+               Press Cntrl and MouseClick on this link
+                     <span class="pB"> http://192.168.178.74:5004 </span>
+               'schedulePlus' shows up in your browser
+                  (Eventually you have to reload the page)
+
+                       <span class="pg">Enjoy schedulePlus  ;) </span>
+
+                Getting schedulePlus Status.
+         DIR >>/home/pi/schedulePlus<<
+         ...  systemAndPort   getIPbase :  192.168.178.74 ('rasp4.fritz.box', [], ['192.168.178.74'])
+        ['rasp4:5004', '192.168.178.74:5004']
+        [ ok ] /home/pi/schedulePlus/schedulePlus.py is running.
+        pi@rasp4:~ $
+      </pre>
+      </p>
+    </ol>
+  </div>
+
+
+
+  <h4 style="margin-left: 10px"><em>schedule+</em> Starten</h4>
+  <div style="margin-left: 12px">
+    Die <b><em>schedule+</em></b> App wird durch das vorbeschriebene Konfigurieren mit einem automatischem Anlauf versehen, d.h. nach Einschalten des RPI und sobald das LAN/WLAN zur Verfügung steht, startet <em>schedule+</em>.
+    <br>
+    So ist gewährleistet, das auch nach Beendigung einer Stromunterbrechung <b><em>schedule+</em></b> mit dem Tagesplan weiter arbeitet.
+    <br>
+    Sollte ein außergewöhnlicher Wiederanlauf notwendig sein, empfiehlt sich der Aufruf <code>./schedulePlusSetup.sh -c</code> an der Konsole des RPI.
+  </div>
+
+  <br>
+
+
+  <hr>
+  <h3> Anhang </h3>
+  <hr />
+
+  <h4 id="ini-dateien"><em>schedule+</em> Tagesplan einrichten (INI Dateien)</h4>
+
+  <div>Die Schaltzeiten für die Schalter sind in einfachen Textdateien mit der Endung .INI erfasst.
+    Diese Dateien befinden sich im <code>schedulePlus/data</code> Verzeichnis.
+    Das Setup-Script erstellt ein einfaches Beispiel einer .INI Datei.
+  </div>
+  <div>Die <b>.INI Dateien</b> lassen sich innerhalb der <em>schedule+</em> App erstellen, bearbeiten/anpassen, siehe <a href="de.scheduleEdit"> "Job / Job Listen Editor"</a>.
+    <br>
+    Da die .INI Dateien einfache Text Dateien sind, können sie auch mit Hilfe eines Text Editors (VIM,nano etc) bearbeitet werden.
+  </div>
+
+  <div>Das Verzeichnis <code>schedulePlus/data</code> mit den individuell angepassten .INI Dateien wird mit erneutem Ausführen des Setup Scripts nicht gelöscht/überschrieben.
+  </div>
+
+  <hr>
+
+  <h4 id="schedule-library-programme"><em>schedule+</em> Library Programme</h4>
+  <div>Für <b><em>schedule+</em></b> sind die folgenden Python Module erforderlich und werden mit dem Script installiert:</div>
+  <ul>
+    <li><b>PIP</b> Python Installer </li>
+    <li><b>Date/Time</b> für die flexible Handhabung dient [dateutil]. Dies beinhaltet einen Praser, so werden einfach formatierte Datum/Zeitangaben zu vollen 'date/time' Objekten gewandelt. </li>
+    <li><b>Zeitsteuerung</b> arbeitet mit <b><a href="https://pypi.python.org/pypi/APScheduler">Advanced Scheduler vers.3</a></b></li>
+    <li><b>Location/Geolocation/Sunrise/Sunset</b> - <em>schedule+</em> benötigt zur täglichen Berechnung von Sonnenauf- und -untergang die 'GeoLocations', dh. den genauen Raspberry Installationsort. Um diesen zu finden wird <a href="http://ipinfo.io/json"><b>ipinfo.io/json </b></a> genutzt. Diese Seite ermittelt den Standort mit Hilfe der IP des Router Systems. Dies kann zu Abweichungen zum aktuellen Standort führen. Eine Korrektur ist mit lauffähigem <em>schedule+</em> auf der Seite 'GeoLocation' möglich. Mit der dort gezeigten OpenStreetMap kann der genaue Standort ermittelt werden.
+    </li>
+    <li><b>Web Pages</b> sind unterstützt mit <b><a href="https://bottlepy.org/docs/dev/">bottle</a></b> <br />
+    </li>
+  </ul>
+
+  <hr />
+
+  <h4> Setup-Script Befehle</h4>
+
+  <div>Aufruf <code><b>./schedulePlusSetup.sh [arg]</b></code>
+  </div>
+  <pre>
+    arg
+    --help
+    --Z 	Hole ZIP von GIThub
+    --L 	Liste vorhandene ZIP Versionen
+    --U 	Unzip und schreibe 'schedulePlus'	Verzeichnis
+    --P 	Install Python Libraries
+    --J 	Abfrage Benutzerdaten 	(Router, WLAN IP der Geräte)
+    --S 	Start 'schedulePLus'
+  </pre>
+
+
+  <hr />
+
+  <h4> Advanced User Mode -- Problem Verfolgung</h4>
+
+  <div><b><em>schedule+</em></b> schreibt unterschiedliche Log Meldungen in zwei Dateien:
+    <code>../schedulePlus/logs/Info.log</code> und <code>../schedulePlus/logs/System.log</code>
+    <br>
+    Für weitergehende Log Infos kann <em>schedule+</em> auch gestartet werden mit:
+    <pre>
+  pi@rasp4:~ $ sudo service schedulePlus stop
+  pi@rasp4:~ $ cd schedulePlus
+  pi@rasp4:~/schedulePlus $ sudo python3 schedulePlus.py
+</pre>
+    Dabei werden auf der Konsole die Aktivitäten von <em>schedule+</em> protokolliert.
+    <br>
+    Zum Normalbetrieb zurück mit:
+    <pre>
+  Hit Ctrl-C to quit.
+
+  ^C### logSys  ::   *** schedulePlus done!
+  pi@rasp4:~/schedulePlus $ sudo service schedulePlus start
+  pi@rasp4:~/schedulePlus $ sudo service schedulePlus xstatus
+</pre>
+  </div>
+
+
+  <!--
+  <p>
+  <pre id="spoiler1" class="spoiler" style="display:none">
+pi@raspberryPI:~ $ ./schedulePlusSetup.sh --help
+___ schedulePlus Setup #3.0.5 2020-10-27_16 ___
+xDir: /home/pi
+baseDIR: /home
+currentDIR: pi
+</pre>
+  <button style="margin-left:10px" onclick="spoiler('spoiler1')">Anzeigen/Verbergen</button>
+  </p>
+-->
+  <hr>
+
+  <script>
+    function copy2clip(elem) {
+      var copyElem = document.getElementById(elem);
+      //var _copyElem = copyElem.focus();
+      copyElem.select();
+      document.execCommand("copy");
+
+      _link = "https://jsoneditoronline.org";
+      window.open(_link, 'docu');
+    }
+
+    function spoiler(elem) {
+      var spElem = document.getElementById(elem);
+      let mode;
+      if (spElem.getAttribute('style') === "display:block") {
+        mode = 'display:none'
+      }
+      if (spElem.getAttribute('style') === "display:none") {
+        mode = 'display:block'
+      }
+      spElem.setAttribute('style', mode)
+    }
+  </script>
+
+</body>
+
+</html>
