@@ -1,8 +1,8 @@
 #!/bin/bash
 
 NAME='schedulePlus'
-VDATE='2022-07-12'
-VERSION='0.2.3.2'
+VDATE='2022-07-18'
+VERSION='0.2.3.3'
 
 #ZIPP=$NAME.zip
 GITdoc='https://neandr.github.io/'$NAME
@@ -267,11 +267,13 @@ function install_PY ()        # --P
 function edit_userjprefs ()          # --J
 {
    echo -e "\n$ba  ... Edit '$NAME/$jUserData'   $e0"
+
    if [ ! -f '$NAME/$jUserData' ] ; then
       nano $NAME/$jUserData
       cat $NAME/$jUserData
 
-      cp $NAME/$jUserData $NAME/data/jPrefs.json
+      sudo cp $NAME/$jUserData $NAME/data/jPrefs.json
+      sudo chown $USER:$USER $NAME/data/jPrefs.json
 
    else
       echo -e "$br   ... Edit Failed!  '$NAME/$jUserData' missing ! $e0"
@@ -427,8 +429,6 @@ function SystemConfigure()     #Configure schedulePlus
          edit_userjprefs
 
          SystemCheck
-
-         #SystemConfigure
       ;;
 
 
@@ -440,6 +440,21 @@ function SystemConfigure()     #Configure schedulePlus
 
        SystemConfigure;
        ;;
+
+
+      -e|--edit_configure)
+       echo -e "$bb  ... System konfigurieren                $e0"
+
+       sudo service schedulePlus stop #2>/dev/null
+       echo -e "$ba  ... $NAME is stopped!  $e0"
+
+       edit_userjprefs
+
+       echo -e "$bb  ... User data changed, need App Restart $e0"
+       sudo service schedulePlus start #2>/dev/null
+       sudo service schedulePlus xstatus #2>/dev/null
+       ;;
+
 
       # -----------------------------------------------
       -f|--startup_failed)

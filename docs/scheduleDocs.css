@@ -1,0 +1,120 @@
+/*
+ *    **schedule+**     scheduleDocs.css         /cVersion/2022-06-24/
+ */
+   /*  *,  */
+   *::after,
+   *::before {
+     font-family:
+       /*Verdana,*/
+       Arial, sans-serif;
+   }
+   html,
+   body {
+     min-height: 100vh
+   }
+
+   body {
+     font-family: Arial, sans-serif;
+     font-size: .9em;
+     line-height: 1.2em;
+     color: #000040;
+     margin-left: 4%;
+     margin-right: 4%;
+   }
+
+   h2, h3, h4, h5 {
+     margin-top: 1.5em;
+     font-weight: bold;
+   }
+
+   h3 {
+     font-size: 1.3em;
+   }
+
+   h4 {
+     font-size: 1.1em;
+   }
+
+   h5 {
+     font-size: 1em;
+   }
+
+
+   div, br {
+     margin-bottom: .5em;
+   }
+
+   hr {
+     color: #cdcddc;
+   }
+
+
+   li {
+      margin-top: .6em;
+   }
+
+   div p {
+      margin-left: 20px;
+   }
+
+   pre {
+      color: blue;
+      background-color: #eeecec;
+   }
+
+   .pb {
+      color: blue;
+   }
+
+   .pR {
+      color: red;
+   }
+
+   .pB {
+     color: black;
+     font-weight: bold;
+   }
+
+   .pg {
+      color: green;
+      font-weight: bold;
+     }
+
+   .note {
+      color: red;
+   }
+
+   code {
+      color: #8b0496;
+      font-size: 1.2em;
+      background-color: #eeecec;
+   }
+
+
+   .noUnder:hover {
+     text-decoration: underline;
+   }
+
+   .mono {
+     font-family: Courier New;
+   }
+
+   .imgdoc {
+     height: 1.2em;
+     margin-bottom: -3px;
+   }
+
+   .scheduleIcon {
+     width: 35px;
+     margin-right: 8px;
+   }
+
+   .spoiler {
+      background-color: lightgray;
+      display: none;
+   }
+
+   #pFooter {
+     font-size: .8em;
+     line-height: .7em;
+   }

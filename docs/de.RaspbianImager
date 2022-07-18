@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--  CSS Setup -->
+  <link rel="stylesheet" href="scheduleDocs.css">
+
+  <title>Raspbian Imager</title> <!-- 2022-07-14 -->
+
+</head>
+
+<body>
+  <div class="schedule header">
+
+    <h2 id="scheduleplus">
+      <em><a class="noUnder" href="de.index">
+          <span style="display: flex;align-items: center;">
+            <img src="icon/schedulePlus.icon.png" class="scheduleIcon">schedule+</span>
+        </a></em>
+    </h2>
+
+    <div style="right: 4%;">
+      <div style="text-align: right; font-size: .8em; margin-top: -2em;
+			     padding-bottom: 2em;">
+        <!--      <a href="en.schedulePlusSetup">
+          <img title="English" src="icon/flagUS.png" align="bottum"></a>  -->
+      </div>
+
+      <div style="text-align: right; font-size: .8em; margin-top: -2.6em;">
+        <em>2022-07-12</em>
+      </div>
+    </div>
+    <h3 style="margin-top:-10px"><em>RaspianOS Installation und Konfiguration</em> </h3>
+    <hr>
+  </div>
+
+
+  <p><i><b>schedule+</b></i> App must run on a RPI with a Raspbian operating system stored on a SDcard.
+    <br>
+    To install the operating system on an SD card, you can use the <b>Raspberry Pi Imager</b>, which must be installed on a desktop with an SD card reader.
+    <br> The Raspberry Pi Imager can be downloaded from
+    <a class="moz-txt-link-freetext" href="https://www.raspberrypi.com/software/">https://www.raspberrypi.com/software/</a>
+  </p>
+
+  <h4>OS Installation on a SDcard</h4>
+
+  <div>&nbsp; &nbsp; &nbsp; <img alt="Imager1" src="../pict/Imager_1.png" width="400"></div>
+
+  <p>Insert the SDcard (e.g with 16 GB capacity, recommanded: use fat32 formatting) into an SDcardReader on your desktop and start.<br>
+
+    With the Imager select an OS like "Raspberry PI OS (32-bit) 0.8 GB / Bullseye" or
+    "Raspberry PI OS Lite (32-bit) / Bullseye no desktop 0.3 GB <br>
+  </p>
+  <div>&nbsp; &nbsp; &nbsp; <img alt="Imager3" src="../pict/Imager_3.png" width="366"></div>
+
+  <p>and the storage device (shows a 16 GB with some 'old' installation,
+    which will be overwritten)<br>
+  </p>
+  <div>&nbsp; &nbsp; &nbsp; <img alt="Imager2" src="../pict/Imager_2.png" width="400"></div>
+
+  <p>Before writing to the Storage Device, take a look at the <b>Advanced Options</b> that are available with the cogwheel
+  </p>
+  <div>&nbsp; &nbsp; &nbsp; <img alt="Imager4" src="../pict/Imager_4.png" width="427"></div>
+
+  <p>Set the following :</p>
+  <p>-- hostname (default 'pi')<br>
+    -- enable SSH with 'Use password authentication'<br>
+    -- set user name and PW<br>
+    -- optional WLAN parameters<br>
+    -- set locale settings (Timezone, keyboard)<br>
+    -- eject media when finished<br>
+  </p>
+  <p>Press <b>[Save]</b> and <b>[Write]</b></p>
+  <p>Stay tuned .. writing and reviewing the 0.3 GB Lite version took about 6 minutes and is finally finished with:
+    <br>
+  </p>
+  <div>&nbsp; &nbsp; &nbsp; <img alt="Imager5" src="../pict/Imager_5.png" width="430"></div>
+
+  <p>Remove SDcard, install it into the RPI and power it on.</p>
+
+  <h4>Set fixed IP for the RPI via Router menu</h4>
+
+  <p>Open the router network overview and find the RPI with the
+    'hostname' defined before.<br>
+    Configure the 'Name' and set a 'fixed' IP.<br>
+    These changes need a reboot of the RPI to activate them.<br>
+
+    After the RPI has been restarted, the RPI settings should be checked again on the router.</p>
+
+  <h4>Access the RPI using SSH</h4>
+  <p>On the desktop console, type <code>ssh &lt;username&gt;@&lt;fixed RPI ip&gt;</code>. <br>
+    You will see a response according to this:
+  </p>
+  <pre style="margin-left: 15px; margin-right:15px">
+        xuser@xuser-xfce:~$ ssh <a
+            class="moz-txt-link-abbreviated moz-txt-link-freetext"
+            href="mailto:pi@192.0.2.75">pi@192.0.2.75</a>
+        @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        @   WARNING: REMOTE HOST IDENTIFICATION HAS
+          CHANGED!   @
+        @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING
+          NASTY!
+        Someone could be eavesdropping on you right now
+          (man-in-the-middle attack)!
+        It is also possible that a host key has just
+          been changed.
+        The fingerprint for the ECDSA key sent by the
+          remote host is
+        SHA256:OzDb8....................ql6+MuAO7mY.
+        Please contact your system administrator.
+        Add correct host key in
+          /home/xuser/.ssh/known_hosts to get rid of this message.
+        Offending ECDSA key in
+          /home/xuser/.ssh/known_hosts:2
+          remove with:
+          ssh-keygen -f "/home/xuser/.ssh/known_hosts"
+          -R "192.0.2.75"
+        ECDSA host key for 192.0.2.75 has changed and
+          you have requested strict checking.
+        Host key verification failed.
+        xuser@xuser-xfce:~$
+        xuser@xuser-xfce:~$ ssh-keygen -f
+          "/home/xuser/.ssh/known_hosts" -R "192.0.2.75"</pre>
+
+
+  <p>The next login to the console with <code> ssh pi@192.0.2.75 </code> will cause the user login to also request the PW (see above).</p>
+
+  <p id="update" style="margin-left: 25px;"><b><i> IMPORTANT</i></b> The installed OS needs an 'Update' and 'Upgrade' to work correctly!<br>
+    Use: <code> sudo apt-get update </code><br>
+    and: <code> sudo apt-get upgrade </code>
+  </p>
+
+  <p>The RPI is ready to install and run <i><b>schedule+</b></i><br>
+  </p>
+
+</body>
+
+</html>
