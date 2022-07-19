@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--  CSS Setup -->
+  <link rel="stylesheet" href="scheduleDocs.css">
+  <style type="text/css">
+    body {
+      margin-left: 4%;
+      margin-right: 8%;
+    }
+  </style>
+
+
+  <title>schedule+  GeoDetails</title> <!-- 2022-06-15 -->
+
+</head>
+
+<body>
+  <div>
+
+
+    <h2 id="scheduleplus">
+      <em><a class="noUnder" href="de.index">
+          <span style="display: flex;align-items: center;">
+            <img src="icon/schedulePlus.icon.png" class="scheduleIcon">schedule+</span>
+        </a></em>
+    </h2>
+
+
+    <div style="right: 4%;">
+      <div style="text-align: right; font-size: .8em; margin-top: -4em;
+			     padding-bottom: 2em;">
+        <a href="en.geodetails.html">
+          <img title="English" src="icon/flagUS.png" align="bottum"></a>
+      </div>
+
+      <div style="text-align: right; font-size: .8em; margin-top: -2.6em;">
+        <em>2022-06-15</em>
+      </div>
+    </div>
+    <h3 style="margin-top:-10px"><em>GeoDetails </em> </h3>
+    <hr>
+
+
+    <h4 id="jobeditor">GeoLocation -- Bedeutung</h4>
+    <div>
+
+      Mit dem Aufruf der Seite 'GeoDetails' wird eine OpenStreetMap mit dem aktuellen Ort gezeigt -- der 'GeoLocation'. Für diesen Ort berechnet <i><b>schedule+</b></i> tagesaktuell die Zeiten für Sonnenaufgang und Sonnenuntergang.
+    </div>
+    <div>&nbsp; &nbsp; &nbsp; <img alt="OpenStreetMap" style="width:85%" src="pict/mapGeoLocation.png"></div>
+    <div>
+      Sind die <img src="icon/marker-blue.svg" class="imgdoc"> PostionsIcons in und unter der Karte beide 'blau', so bezieht sich die Textbeschreibung unter der Karte auf die Position des blauen Icons in der Karte.
+    <br>
+      Beim ersten Aufruf von <i><b>schedule+</b></i> kann diese Angabe nicht mit dem aktuellen Standort der Installation übereinstimmen.
+    </div>
+
+    <h4 id="jobeditor">GeoLocation -- Anpassung</h4>
+
+    <div>
+      1. Finden des aktuellen Standortes
+    </div>
+    <p style="margin-left: 2em;">
+      1a. <img src="pict/geoPositionIP.png" align="middle">  Knopf in der Karte
+    <br>
+      Ein MausClick auf diesen Knopf ermittelt anhand der IP-Adresse den Ort der Installation; das PostionsIcons wechselt zu <img src="icon/marker-red.svg" class="imgdoc"> 'rot'.
+    <br>
+    <i>oder</i>
+    <br>
+
+      1b. Manuelle Auswahl auf der Karte
+    <br>
+      Ein MausClick in die Karte wählt einen gewünschten Ort aus; das PostionsIcons wechselt zu  <img src="icon/marker-green.svg" class="imgdoc"> 'grün'.
+    </p>
+
+    <p>
+      2. Übernahme des gewählten Ortes als 'GeoLocation'
+    </p>
+    <p style="margin-left: 2em;">
+      Bei beiden Methoden erscheint am rechten unteren Rand ein Pfeil in entsprechender Farbe
+      <img src="icon/download-red.svg" class="imgdoc">  bzw. <img src="icon/download-green.svg" class="imgdoc">, die Ortsdaten sind damit aber noch nicht übernommen für die Berechnung von Sonnenaufgang- und Sonnenuntergang .
+      <br>Erst bei einem MausClick auf den Pfeil übernimmt <i><b>schedule+</b></i> diesen Ort als neue 'GeoLocation'. Die Beschreibung unter der Karte bezieht sich dann auf diese neue Position; das PostionsIcons wechselt zu  <img src="icon/marker-blue.svg" class="imgdoc"> 'blau'.
+    <br>
+      Die neue 'GeoLocation' ist nunmehr Grundlage für die Berechnung des Sonnenaufgangs / Sonnenuntergangs.
+
+    </p>
+
+</body>
+
+</html>

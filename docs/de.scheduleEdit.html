@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--  CSS Setup -->
+  <link rel="stylesheet" href="scheduleDocs.css">
+  <style type="text/css">
+    body {
+      margin-left: 4%;
+      margin-right: 8%;
+    }
+  </style>
+
+
+  <title>schedule+  Tagesplan Bearbeiten / Editor</title> <!-- 2022-06-15 -->
+
+</head>
+
+<body>
+  <div>
+
+
+    <h2 id="scheduleplus">
+      <em><a class="noUnder" href="de.index">
+          <span style="display: flex;align-items: center;">
+            <img src="icon/schedulePlus.icon.png" class="scheduleIcon">schedule+</span>
+        </a></em>
+    </h2>
+
+
+    <div style="right: 4%;">
+      <div style="text-align: right; font-size: .8em; margin-top: -4em;
+			     padding-bottom: 2em;">
+        <a href="en.scheduleEdit.html">
+          <img title="English" src="icon/flagUS.png" align="bottum"></a>
+      </div>
+
+      <div style="text-align: right; font-size: .8em; margin-top: -2.6em;">
+        <em>2022-06-15</em>
+      </div>
+    </div>
+    <h3 style="margin-top:-10px"><em>Tagesplan und Jobs Bearbeiten </em> </h3>
+    <hr>
+
+
+    <h4 id="jobeditor">Tagesplan und Jobs erstellen und anpassen</h4>
+    <div>
+      Die Seite 'Aktueller Tagesplan' stellt auch den Zugang zur Erstellung und Anpassung von Tagesplan mit seinen Jobs zur Verfügung.
+    </div>
+    <div>&nbsp; &nbsp; &nbsp; <img alt="Tagesplan Editor" style="width:85%" src="pict/editMenus.png"></div>
+    <div>
+       Das Dialogfeld 'Tagesplan' zeigt den ausgewählten, aktuellen Tagesplan sowie Icons zu deren Bearbeitung:
+      <ul>
+        <li><img src="icon/refresh.svg" class="imgdoc"> Aktualisierung des Tagesplanes, so werden bereits ausgeführte Jobs des Tages aus der Übersicht entfernt</li>
+
+        <li>Das Menüfeld gibt den aktuellen Tagesplan an; es ist auch ein Auswahl Menü zum Laden anderer Tagespläne</li>
+
+        <li><img src="icon/edit.svg" class="imgdoc"><a href="#calleditor"> Bearbeitung des gesamten Tagesplanes</a> </li>
+        <li><img src="icon/plus.svg" class="imgdoc"><a href="#editorjob"> Hinzufügen</a> eines zusätzlichen Jobs
+          <div>Hiermit wird der Job dem aktuellen Tagesplan hinzugefügt, aber nicht in der (.ini) Datei gespeichert; generelle Änderungen am Tagesplan erfolgt nur mit dem <img src="icon/edit.svg" class="imgdoc"> Aufruf.</div>
+        </li>
+
+      </ul>
+
+      <br>
+      <hr>
+
+      <h4 id="calleditor"><img src="icon/edit.svg" class="imgdoc"> Editor -- Bearbeitung eines Tagesplanes</h4>
+
+      <div>
+        Mit <img src="icon/edit.svg" class="imgdoc"> Aufruf des Editors wird der vorher ausgewählte Tagesplan tabellarisch angezeigt:
+      </div>
+
+      <div>&nbsp; &nbsp; &nbsp; <img alt="Tagesplan Editor" style="width:70%" src="pict/editSchedule.png"></div>
+
+      <div style="margin-left: 5em">
+        <div><em>Hinweis
+            <br>Ein anderer Tagesplan kann durch Eingabe im Dialogfeld angefordert und mit <img src="icon/document-import.svg" class="imgdoc"> 'Neu Laden' geöffnet werden. Existiert kein Tagesplan mit dem angegebenen
+            Namen, so wird automatisch ein neuer Plan angelegt.
+            <br><img src="icon/document-export.svg" class="imgdoc"> 'Speichern' speichert Änderungen des Tagesplanes unter dem im Dialogfeld angegebenen Namen.
+            <br>
+            <img src="icon/close-thick.svg" class="imgdoc"> Löscht den angegebenen Tagesplan (.ini Datei).</span>
+          </em>
+        </div>
+      </div>
+      <br>
+
+
+      <h4 id="">Job in der Tabelle bearbeiten</h4>
+      <div>
+        Mit Aktivieren einer Tagesplan Tabellenzeile öffnet sich das Auswahlmenü:</div>
+      <div>&nbsp; &nbsp; &nbsp; <img alt="Tagesplan Editor Menü" style="width:68%" src="pict/Tagesplan_edit1.png"></div>
+
+      <div> Mit 'Bearbeiten' und 'Neuen Job einfügen' erfolgt die Bearbeitung des Jobs, dabei sind etwas unterschiedliche Bearbeitungen für <a href="#einausedit">EIN/AUS Schalter</a> und <a href="#dimmeredit">DIMMER</a> notwendig.
+      </div>
+
+
+      <h4 id="einausedit">Job für Schalter -- EIN/AUS</h4>
+      <div>&nbsp; &nbsp; &nbsp; <img alt="Tagesplan Editor Menü ON/OFF" style="width:50%" src="pict/Job_definition_onoff.png"></div>
+
+      <div>Das Beispiel stellt einen Schaltvorgang für einen Schalter 'Wohnzimmer' dar. Der Job hat in den vier Boxen Definitionen für EIN als auch AUS, beide Vorgänge haben Verzögerungen (Offset). Bei einem 'Neuen Job' wären die Boxen unbelegt.
+        <br><img src="icon/plus.svg" class="imgdoc"> 'Hinzufügen': der definierte Job wird vor die ausgewählte Tabellenzeile eingefügt, mit <img src="icon/exchange.svg" class="imgdoc"> 'Ersetzen' die ausgewählte Zeile ausgetauscht. In beiden Fällen schliesst sich das Fenster und zeigt den geänderten Tagesplan.
+        <br> <img src="icon/edit-clear.svg" class="imgdoc"> 'Zurücksetzen' löscht alle Eingaben in den vier Boxen.
+        <br><img src="icon/close-thick.svg" class="imgdoc"> bricht die Bearbeitung ohne Änderung des Tagesplanes ab.
+      </div>
+
+      <div>
+        Die vier Boxen für die EIN/AUS bzw EIN/AUS-Offset Einstellungen zeigen die aktuell eingestellten Zeiten und Verzögerungen und arbeiten auch als Menü.
+      </div>
+      <div>
+        <div>&nbsp; &nbsp; &nbsp; <img alt="Edit ON/OFF" style="width:30%" src="pict/edit_einaus.png">
+          &nbsp; &nbsp; &nbsp; <img alt="Edit Offset" style="width:36%" src="pict/edit_einaus-offset.png">
+        </div>
+
+        <div>&nbsp; &nbsp; &nbsp; <em>Hinweis: &nbsp; &nbsp; </em>
+          <span>
+            In den Menüs bedeutet der erste Auswahlpunkt <b>'--'</b> Löschen/Rücksetzen für den jeweiligen Wert.
+          </span>
+        </div>
+
+        <h5>EIN/AUS </h5>
+        <div>
+          Die Schaltzeiten für EIN und AUS werden mit 'Zeit', 'Sonnenaufgang', 'Sonnenuntergang' mittels der linken Box definiert, die Zeitangabe ist zunächst absolut. Die rechte Box definiert den Offset.<br> Eine Besonderheit für EIN/AUS ist die
+          Angabe '+ Zeit'. Dies definiert eine Zeitspanne, die sich auf die 'vorherige' Zeitdefinition bezieht, d.h. auf die im Tagesplan vorherige Zeile mit einer Zeitdefinition -- wie EIN, AUS, SET mit Berücksichtigung eines errechneten Offsets! <br>Da dies auch die Zeitschaltung für ein anderes Gerät sein kann, lassen sich Geräte
+          übergreifende Schaltabläufe erstellen.
+        </div>
+
+        <h5>EIN/AUS OFFSET</h5>
+        <div>
+          'OFFSET' verschiebt EIN und AUS Zeiten von ihrer absoluten Angaben. Der Wert der Verschiebung definiert die 'Zeitspanne'. So entsteht kein starrer Zeitplan für die Schaltvorgänge.<br>
+          Die Zeitspanne für 'zufällig' ist ein Basiswert, d.h. der tagesaktuell berechnete Wert der Verschiebung liegt in dem Bereich von Null bis dem max. Wert der Zeitspanne.<br>
+          Zu unterscheiden ist wie die Zeit/Zeitspanne in Bezug auf die absolute EIN/AUS Zeit liegt. Bei '+' und '~' verschiebt sie den Schaltzeitpunkt in die Zukunft, bei '-' und '~-' liegt der errechnete Schaltzeitpunkt vor dem absoluten Zeitpunkt.
+        </div>
+      </div>
+
+      <h4 id="dimmeredit">Job für DIMMER -- SET</h4>
+      <div>
+        Dimmer werden nicht nur einfach Ein/Aus geschaltet, sondern es wird ein Helligkeitswert oder ein Verlauf definiert.
+      </div>
+      <div>&nbsp; &nbsp; &nbsp; <img alt="Tagesplan Editor Menü SET" style="width:50%" src="pict/defSetJob.png"></div>
+
+      <div>'SET' und 'SEToffset' entsprechen den EIN/AUS Einstellungen. Die Dreier-Gruppen darunter
+        beschreibt einen Verlauf der Dimmerhelligkeit.
+        Über die 'Delta Zeit' wird vom 'Start Wert' zum 'Stop Wert' die Helligkeit in Einzelschritten geändert. Dabei kann der Start Wert kleiner als der Stop Wert sein, d.h. die Helligkeit nimmt ab.
+      </div>
+      <br>
+
+      <hr>
+
+      <h4 id="editorjob"><img src="icon/plus.svg" class="imgdoc"> Editor -- Hinzufügen eines Tagesjobs</h4>
+      <div>
+        Soll am laufenden Tag dem aktiven, aktuellen Tagesplan ein zusätzlicher Job hinzugefügt werden, so kann dies ohne Änderung des Tagesplans / der .ini-Datei erfolgen.
+        <br>Mit dem <img src="icon/plus.svg" class="imgdoc">-Aufruf auf der Seite 'Aktueller Tagesplan' wird ein "neuer" Job definiert und nur zu den aktuellen Jobs des aktiven Tagesplanes hinzugefügt, aber nicht in der (.ini)-Datei gespeichert.
+        <br>
+        Das bedeutet, die Ergänzung ist nur für den aktuell geladenen Tagesplan gültig. Beim Neuladen des Tagesplans -- sowie beim Tagesübergang -- ist der 'neue' Job nicht mehr im Tagesplan!
+        <br>
+
+        Generelle Änderungen am Tagesplan erfolgt nur <a href="#jobeditor">mit dem obigen <img src="icon/edit.svg" class="imgdoc"> Aufruf</a>.
+      </div>
+      <br>
+      <div> Nach dem Aufruf des <img src="icon/plus.svg" class="imgdoc"> auf der Seite 'Aktueller Tagesplan' ist zunächst der Typ des 'Neuen Jobs' auszuwählen:
+      </div>
+      <div>&nbsp; &nbsp; &nbsp; <img alt="Editor Job Selection" style="width:50%" src="pict/jobdef.png"></div>
+
+      <div>Danach erfolgt die Anzeige des 'Job Definition' Dialoges wie oben beschrieben für "Job für Schalter -- EIN/AUS" oder "Job für DIMMER -- SET".
+      </div>
+      <div><img src="icon/plus.svg" class="imgdoc"> Hinzufügen schließt die Eingabe des Jobs ab und er wird berechnet entsprechend der Definitionen. Im 'Aktueller Tagesplan' wird er sichtbar sein, sofern die errechneten Zeiten noch im
+        weiteren aktuellen Tagesverlauf liegen.
+      </div>
+
+</body>
+
+</html>

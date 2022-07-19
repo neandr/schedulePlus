@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--  CSS Setup -->
+  <link rel="stylesheet" href="scheduleDocs.css">
+  <style type="text/css">
+    body {
+      margin-left: 4%;
+      margin-right: 8%;
+    }
+  </style>
+
+
+  <title>schedule+ Editor schedule</title> <!-- 2022-06-23 -->
+
+</head>
+
+<body>
+  <div>
+    
+
+    <h2 id="scheduleplus">
+      <em><a class="noUnder" href="en.index">
+          <span style="display: flex;align-items: center;">
+            <img src="icon/schedulePlus.icon.png" class="scheduleIcon">schedule+</span>
+        </a></em>
+    </h2>
+
+
+    <div style="right: 4%;">
+      <div style="text-align: right; font-size: .8em; margin-top: -4em;
+			     padding-bottom: 2em;">
+        <a href="de.scheduleEdit.html">
+          <img title="English" src="icon/flagUS.png" align="bottum"></a>
+      </div>
+
+      <div style="text-align: right; font-size: .8em; margin-top: -2.6em;">
+        <em>2022-06-15</em>
+      </div>
+    </div>
+    <h3 style="margin-top:-10px"><em>Edit DaySchedule and Jobs</em> </h3>
+    <hr>
+
+
+    <h4 id="jobeditor">Create and customize the schedule and it jobs</h4>
+    <div>
+      The page 'Actual DaySchedule' also provides access to creating and customizing DaySchedule with its jobs.
+    </div>
+    <div>&nbsp; &nbsp; &nbsp; <img alt="Tagesplan Editor" style="width:85%" src="pict/editMenus.png"></div>
+    <div>
+      The 'DaySchedule' dialog box shows the selected current daily schedule and icons for editing them:
+      <ul>
+        <li> <img src="icon/refresh.svg" class="imgdoc">Updating the day schedule, this removes already executed jobs of the day from the overview</li>
+
+        <li>The menu panel specifies the current schedule; it is also a selection menu for loading other DaySchedules</li>
+
+        <li><img src="icon/edit.svg" class="imgdoc"><a href="#calleditor"> Processing of the entire DaySchedule</a> </li>
+        <li> <img src="icon/plus.svg" class="imgdoc"><a href="#editorjob">Adding</a> an additional job
+          <div>This adds the job to the current DaySchedule,
+            but does not save it in the (.ini) file; general changes to the DaySchedule are made only with the <img src="icon/edit.svg" class="imgdoc">call.</div>
+        </li>
+
+      </ul>
+
+      <br>
+      <hr>
+
+      <h4 id="calleditor"> <img src="icon/edit.svg" class="imgdoc">Editor -- Editing a DaySchedule</h4>
+
+      <div>
+        When the <img src="icon/edit.svg" class="imgdoc">editor is called, the previously selected DaySchedule is displayed in tabular form:
+      </div>
+
+      <div>&nbsp; &nbsp; &nbsp; <img alt="Tagesplan Editor" style="width:70%" src="pict/editSchedule.png"></div>
+
+      <div style="margin-left: 5em">
+        <div><em>Note
+            <br>Another DaySchedule can be requested by entering it in the dialog box and opened with <img src="icon/document-import.svg" class="imgdoc"> 'Reload'. If no DaySchedule with the specified name exists, a new plan is created
+            automatically.
+            <br><img src="icon/document-export.svg" class="imgdoc">'Save' saves changes to the DaySchedule under the name specified in the dialog box.
+
+
+            <br><img src="icon/close-thick.svg" class="imgdoc">Deletes the specified schedule (.ini file).
+          </em>
+        </div>
+      </div>
+      <br>
+
+
+      <h4 id="">Edit a Job in the table</h4>
+      <div>
+        By activating a DaySchedule table row, the selection menu opens:</div>
+      <div>&nbsp; &nbsp; &nbsp; <img alt="Tagesplan Editor Menü" style="width:68%" src="pict/Tagesplan_edit1.png"></div>
+
+      <div> With 'Edit' and 'Insert a new job' the editing of the job is started, slightly different edits for <a href="#einausedit">ON/OFF</a> switches and <a href="#dimmeredit">DIMMER</a> are necessary.
+      </div>
+
+
+      <h4 id="einausedit">Job for switches -- ON/OFF</h4>
+      <div>&nbsp; &nbsp; &nbsp; <img alt="Tagesplan Editor Menü ON/OFF" style="width:50%" src="pict/Job_definition_onoff.png"></div>
+
+      <div>The example represents switching operations for a switch
+        'Living Room'. The job has definitions for ON as well as OFF in
+        the four boxes, both tasks have delays (Offset). With a 'New Job' the
+        boxes would be unused.
+        <br><img src="icon/plus.svg" class="imgdoc">'Add': the defined job is <img src="icon/exchange.svg" class="imgdoc">inserted
+        before the selected table row, 'Replace' exchanges the selected row. In both cases, the window closes and shows the changed DaySchedule.
+        <br><img src="icon/edit-clear.svg" class="imgdoc">'Reset' deletes all entries in the four boxes.
+        <br><img src="icon/close-thick.svg" class="imgdoc">cancels the processing without changing the DaySchedule.
+      </div>
+
+      <div>
+        The four boxes for the ON/OFF or ON/OFF-Offset settings show the currently set times and delays and also work as a menu box.
+      </div>
+      <div>
+        <div>&nbsp; &nbsp; &nbsp; <img alt="Edit ON/OFF" style="width:30%" src="pict/edit_einaus.png">
+          &nbsp; &nbsp; &nbsp; <img alt="Edit Offset" style="width:36%" src="pict/edit_einaus-offset.png">
+        </div>
+
+        <div>&nbsp; &nbsp; &nbsp; <em>Note: </em>
+          <span>
+            In the menus, the first selection point means <b>'---'</b> Delete/Reset for the respective value.
+          </span>
+        </div>
+
+        <h5>ON/OFF </h5>
+        <div>
+          The switching times for ON and AUS are defined with 'Time',
+          'Sunrise', 'Sunset' in the left box; the time is absolute at
+          first. The right box defines the 'Offset'.
+          <br>
+          A special feature for ON/OFF is the specification '+ time'. This defines a time period which refers to the 'previous' time definition, i.e. to the previous line in the DaySchedule with a time definition -- such as ON, OFF, SET with
+          consideration of a calculated offset!
+          <br>
+          Since this can also be the time definition for another device, switching sequences covering over different devices can be created.
+        </div>
+
+
+        <h5>ON/OFF OFFSET</h5>
+        <div>
+          OFFSET' shifts ON and OFF times from their absolute values. The value of the shift defines the 'time span'. This creates not a rigid, but a variable schedule for the switching operations.
+          <br>
+          The time span for 'random' is a base value, i.e. the daily calculated value of the displacement is in the range from zero to the max. value of the time span.
+          <br>
+          It is necessary to distinguish how the time/time span is in relation to the absolute ON/OFF time. With '+' and '~' it shifts the switching time into the future, with '-' and '~-' the calculated switching time is before the absolute time.
+        </div>
+      </div>
+
+      <h4 id="dimmeredit">Job for DIMMER -- SET</h4>
+      <div>
+        Dimmers are not only simply switched on/off, but a brightness value or a gradient is defined.
+      </div>
+      <div>&nbsp; &nbsp; &nbsp; <img alt="Tagesplan Editor Menü SET" style="width:50%" src="pict/defSetJob.png"></div>
+
+      <div>'SET' and 'SEToffset' correspond to the ON/OFF settings.
+        The following three boxes describe a course of the dimmer brightness.
+        Via the 'Delta Time' the brightness is changed in single steps from the 'Start Value' to the 'Stop Value'. The start value can be smaller than the stop value, i.e. the brightness decreases.
+      </div>
+      <br>
+
+      <hr>
+
+      <h4 id="editorjob"> <img src="icon/plus.svg" class="imgdoc">Editor -- Adding a day job</h4>
+      <div>
+        If an additional job is to be added to the active, current daily
+        schedule on the current day, this can be done without changing the
+        DaySchedule / .ini file.
+        <br>With the <img src="icon/plus.svg" class="imgdoc">call
+        on the 'Current DaySchedule' page, a "new" job is defined and added only
+        to the current jobs of the active DaySchedule, but not stored in the
+        (.ini) file.
+
+        <br>This
+        means that the addition is only valid for the currently loaded daily
+        schedule. When reloading the day plan, the 'new' job is no longer in the day plan! This also applies to the day transition.
+
+
+        <br>General changes to the DaySchedule are only made <a href="#jobeditor">with the call above<img src="icon/edit.svg" class="imgdoc"></a>.
+      </div>
+      <br>
+      <div> After calling <img src="icon/plus.svg" class="imgdoc">the 'Current DaySchedule' page, first the type of the 'New Jobs' must be selected:
+      </div>
+      <div>&nbsp; &nbsp; &nbsp; <img alt="Editor Job Selection" style="width:50%" src="pict/jobdef.png"></div>
+
+      <div>Then the 'Job Definition' dialog is displayed as described above for "Job for Switch -- ON/OFF" or "Job for DIMMER -- SET".
+      </div>
+      <div> <img src="icon/plus.svg" class="imgdoc">Add
+        the entry of the job closes and it is calculated according to the
+        definitions.
+        In the 'Current day schedule' it will be visible if the calculated times are still in the further current day schedule.
+      </div>
+
+
+    </div>
+  </div>
+</body>
+
+</html>

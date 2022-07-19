@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--  CSS Setup -->
+  <link rel="stylesheet" href="scheduleDocs.css">
+  <style type="text/css">
+    body {
+      margin-left: 4%;
+      margin-right: 8%;
+    }
+  </style>
+
+
+  <title>schedule+  GeoDetails</title> <!-- 2022-06-23 -->
+
+</head>
+
+<body>
+  <div>
+    
+
+    <h2 id="scheduleplus">
+      <em><a class="noUnder" href="en.index">
+          <span style="display: flex;align-items: center;">
+            <img src="icon/schedulePlus.icon.png" class="scheduleIcon">schedule+</span>
+        </a></em>
+    </h2>
+
+
+    <div style="right: 4%;">
+      <div style="text-align: right; font-size: .8em; margin-top: -4em;
+			     padding-bottom: 2em;">
+        <a href="de.geodetails.html">
+          <img title="German" src="icon/flagDE.png" align="bottum"></a>
+      </div>
+
+      <div style="text-align: right; font-size: .8em; margin-top: -2.6em;">
+        <em>2022-06-15</em>
+      </div>
+    </div>
+    <h3 style="margin-top:-10px"><em>GeoDetails </em> </h3>
+    <hr>
+
+
+    <h4 id="jobeditor">GeoLocation -- Description</h4>
+    <div>
+      With the call of the page 'GeoDetails' an OpenStreetMap with the current location is shown -- the 'GeoLocation'. For this location <i><b>schedule+</b></i> calculates the times for sunrise and sunset on a daily basis.
+    </div>
+    <div>&nbsp; &nbsp; &nbsp; <img alt="OpenStreetMap" style="width:85%" src="pict/mapGeoLocation.png"></div>
+    <div>
+      If the <img src="icon/marker-blue.svg" class="imgdoc"> position icons in and below the map are both 'blue', the text description below the map refers to the position of the blue icon in the map.
+    <br>
+      When <i><b>schedule+</b></i> is called for the first time, this information may not match the current location of the installation.
+    </div>
+
+    <h4 id="jobeditor">GeoLocation -- Customization</h4>
+
+    <div>
+      1. Finding the current location
+    </div>
+    <p style="margin-left: 2em;">
+      1a. <img src="pict/geoPositionIP.png" align="middle">  Button on the map
+    <br>
+      A mouseClick on this button determines the location of the installation based on the IP address; the PostionsIcons changes to
+      <img src="icon/marker-red.svg" class="imgdoc"> 'red'.
+    <br>
+    <i>or</i>
+    <br>
+
+      1b. Manual selection on the map
+    <br>
+A mouseClick on the map selects a desired location; the PostionsIcon changes to   <img src="icon/marker-green.svg" class="imgdoc"> 'green'.
+    </p>
+
+    <p>
+      2. Accept the selected location as 'GeoLocation'.
+    </p>
+    <p style="margin-left: 2em;">
+With both methods an arrow appears at the right lower edge in appropriate color
+<img src="icon/download-red.svg" class="imgdoc">  bzw. <img src="icon/download-green.svg" class="imgdoc">,
+ however, the location data is not yet used for the calculation of sunrise and sunset.
+      <br>
+
+      Only with a mouse click on the arrow <i><b>schedule+</b></i> takes over this place as a new 'GeoLocation'. The description below the map then refers to this new position; the position icon changes to <img src="icon/marker-blue.svg" class="imgdoc">  'blue'.
+      <br>
+      The new 'GeoLocation' is now the basis for the calculation of the sunrise / sunset.
+    </p>
+
+</body>
+
+</html>

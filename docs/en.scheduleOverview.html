@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--  CSS Setup -->
+  <link rel="stylesheet" href="scheduleDocs.css">
+  <style type="text/css">
+    body {
+      margin-left: 4%;
+      margin-right: 8%;
+    }
+  </style>
+
+  <title>schedule+ Overview</title> <!-- 2022-06-24 -->
+
+</head>
+
+<body>
+
+  <div>
+    
+
+    <h2 id="scheduleplus">
+      <em><a class="noUnder" href="en.index">
+          <span style="display: flex;align-items: center;">
+            <img src="icon/schedulePlus.icon.png" class="scheduleIcon">schedule+<small> &nbsp; Overview</small>
+          </span>
+        </a></em>
+    </h2>
+
+    <div style="right: 4%;">
+      <div style="text-align: right; font-size: .8em; margin-top: -4em;
+			     padding-bottom: 2em;">
+        <a href="de.scheduleOverview.html">
+          <img title="English" src="icon/flagUS.png" align="bottum"></a>
+      </div>
+
+      <div style="text-align: right; font-size: .8em; margin-top: -2.6em;">
+        <em>2022-06-24</em>
+      </div>
+    </div>
+    <h3 style="margin-top:-10px"><em>Control lighting flexibly with WLAN/Tasmota</em> </h3>
+
+    <hr>
+    <br>
+
+
+    <div><strong><em>schedule+</em></strong> enables central switching and setting of WLAN-capable devices via mobile end devices such as smartphones/tablets or also on PCs.
+      <br>
+      Switching times and dimming of lighting fixtures can be freely defined. Timings can be based on sunrise/sunset and can vary with random time periods. Such settings are also combined into daily and weekly schedules.
+      <br>
+      With such designed schedules activity in the house is simulated even in the absence.
+      <br>
+      The <strong><em>schedule+</em></strong> functions are grouped on several WEB pages and provide settings, operation, schedule tracking or calling the documentation with an easy to use menu control.
+      <br>
+
+      <strong><em>schedule+</em></strong> is aimed at users who want to use smartphones or PCs as a control center for switching and setting the home installation, and at the same time want to be able to change the settings easily - for example, the
+      daily schedule.
+    </div>
+    <br>
+    <div><strong><em>schedule+</em></strong> runs as an application on a RaspberryPI (RPI).
+      Supported WLAN devices, installation and setup <a href="xx"> ▸ see here </a>
+    </div>
+
+    <hr>
+
+    <h3 id="overview"><em><strong>schedule+</strong></em> -- Start page / Devices in the WLAN</h3>
+    <div>Fig.1 shows the start page of the app with the devices available in the WLAN with their names and their respective states. Switching devices are shown with a green=ON or red=OFF switch, dimmers with a slider. These elements are also used for
+      ON/OFF switching and for changing the dimming brightness, respectively.
+    </div>
+
+    <div>&nbsp; &nbsp; &nbsp; <img alt="schedule+ Start Page" src="pict/schedulePlusOverview1.png" style="width:90%"></div>
+
+    <div style="margin-left: 25px;"><strong> Start Page - Fig.1</strong></div>
+    <div>&nbsp; &nbsp; &nbsp; Explanations
+      <ul>
+        <li><em><strong>schedule+</strong> Kopfzeile </em> -- <span> appears on all WEB pages and offers two functions: access to the main menu and the daily schedule switch</span></li>
+        <li><em>Main Menu</em> -- tap or mouse click to open the <a href="#menu"> ▸ Main Menu </a></li>
+        <li><em>Day Schedule Switch</em> -- Temporary suspension of the active daily schedule with the time-controlled switching/dimming. </li>
+
+        <li><em>Notes </em> -- The line on the right shows which "Day Schedule" is loaded and active.</li>
+        <li><em>Swichtes ON/OFF</em> -- shows the current state, switching by tapping or MouseClick</li>
+        <li><em>Dimming with slider</em> -- the slider shows the brightness value, change by dragging the knob.</li>
+        <li><em>Links to log files</em> -- Calling various event logs</li>.
+        <li><em>URL of the application</em> -- see Installation/Setup</li>.
+      </ul>
+    </div>
+
+    <hr>
+
+    <h4 id="menu"><em><strong>schedule+</strong></em> Main Menu</h4>
+    <div>Die <strong><em>schedule+</em></strong> app has a header on all pages, this is also a menu button to open the 'Main Menu'.
+      The opened menu provides access to the <strong><em>schedule+</em></strong> functions, so it always goes back to the home page [overview] from here.
+    </div>
+
+    <div> <img alt="schedule+ Start Page" src="pict/MainMenuTip.png" style="margin-left:25px; width:70%"> </div>
+    <div style="margin-left: 25px;"><strong>Abb.2 - Main Menu</strong>
+    </div>
+
+    <div>
+      The opened 'Main Menu' shows menu items for the main function areas in the first section:
+      <a href="#overview"> ▸ Overview</a>, <a href="#timeSwitching"> ▸ Day Schedule</a>, <a href="#weekplan"> ▸ Week Plan</a>, <a href="#logfiles"> ▸ Log Files</a>, these are described below:
+      <br>
+
+      <img src="icon/marker-blue.svg" class="imgdoc"><span class="mono"> GeoDetails </span> selects the application location with its GeoCoordinates. This is important to determine the daily times for sunrise and sunset.
+      <br>
+
+      <span class="mono">🇩🇪 Deutsch</span> und <span class="mono">🇺🇸 English</span> set the language selection for the user interface and documentation language.
+    </div>
+
+    <hr>
+
+    <h3 id="timeSwitching"><em><strong>Day Schedule -- Work with time schedule</strong></em></h3>
+    <div><strong><em>schedule+</em></strong> provides a simple menu-driven concept for the definition of daily schedules consisting of a set of switching operations (named jobs).</div>
+
+    <h4 id="jobDefinition">Job Definition</h4>
+    <div>With <strong><em>schedule+</em></strong> the user defines at which time a device should be switched -- this is called a job.
+      <br>
+
+      The time definition of a 'job' is done with absolute time, relative to a previously defined time (e.g. to switch off a device after a certain time) or also relative to <code>Sunrise / Sunset</code>. All time specifications are variable with
+      random times.
+      <br>
+      Multiple actions for the same device can be defined as one job.
+    </div>
+
+    <h4 id="dayPlanDefinition">Day Schedule</h4>
+    <div>A Day Schedule consists of a series of combined jobs. A Day Schedule definition refers to one daily schedule at a time and is saved under any name as a text file (with the extension '.ini') -- e.g. <span class="mono">'schedulePlus.ini
+        ▼'</span>.</div>
+
+    <div>&nbsp; &nbsp; &nbsp; <img alt="schedule+ Tagesplan Beispiel" style="width:70%" src="pict/dayplan.png"></div>
+
+    <div style="margin-left: 25px;"><strong>Fig.3 - Day Schedule Example</strong></div>
+
+    <div>The 'Current Day Schedule' shows in the rows of a table the jobs, i.e. the switching times of the devices with their scheduled functions (ON/OFF/SET/NEW).
+
+      <div style="margin-left: 12px;"><em>Note -- When calling up the 'Current Day Schedule', only the jobs that are pending on this day are displayed.
+        </em></div>
+      <div>
+        With the <img src="icon/entry-delete.svg" class="imgdoc"> icon on the right side of the line, the job can be deleted for execution.
+
+        <div style="margin-left: 12px;"><em>Note -- The deletion is done only for the 'Current Day Schedule', the day plan (.ini) file will not be changed!</em>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <div>
+      The header of the daily schedule table is used for further function calls:
+    </div>
+
+    <div>&nbsp; &nbsp; &nbsp; <img alt="schedule+ Tagesplan Kopfzeile" style="width:70%" src="pict/schedulefileactions.png"></div>
+
+    <ul>
+      <p style="margin-left: -20px;"><em> In the center, the display of the current daily schedule:</em></p>
+      <li>an example: <span class="mono">'aussen.ini ▼',</span> it also serves as a selection menu for loading other daily schedules</li>
+      <p style="margin-left: -20px;"><em> Links to update the daily schedule:</em></p>
+      <li><img src="icon/refresh.svg" class="imgdoc"> The daily schedule is updated with the pending jobs of the day
+      </li>
+      <p style="margin-left: -20px;"><em> Right to edit the daily schedule:</em></p>
+      <li><img src="icon/edit.svg" class="imgdoc"> Icon to start modifing the displayed daily schedule</li>
+      <li><img src="icon/plus.svg" class="imgdoc"> Adding a job only to the active daily schedule, but not to the (.ini) file. Thus, this job is valid only for the current day; general changes to the day plan is done only with the <img
+          src="icon/edit.svg" class="imgdoc">Editor.</li>
+    </ul>
+
+    <div>
+      Above the daily schedule table are the current sunrise and sunset times, which are calculated on a daily basis using the local GeoLocation. Using the <img src="icon/marker-blue.svg" class="imgdoc"><span class="mono"> GeoLocation </span>
+      icon calls up a map on which the current GeoDetails can be checked and set if necessary.
+
+    </div>
+
+    <hr>
+
+    <h4 id="weekplan">Week Plan</h4>
+    <div>&nbsp; &nbsp; &nbsp; <img alt="Wochenplan" src="pict/weekPlan.png" style="width:70%"></div>
+    <div>The weekly schedule defines different daily schedules for each day of the week. If no daily schedule is defined for a weekday (or if it is not available), the schedule of the previous day will continue to be used. For example, different
+      schedules can be defined for the days for the days Monday to Friday and for the weekend.</div>
+
+    <hr>
+
+    <h4 id="logfiles">Log Dateien</h4>
+
+    <div>&nbsp; &nbsp; &nbsp; <img alt="Day Logs" src="pict/logfiles.png" style="width:70%"></div>
+    <div>The Log file page loads a list of the jobs already executed on the current day [ ▸ Today].
+      The activities of the other days of the week can also be retrieved. These lists are written continuously every day in a weekly rhythm.
+    </div>
+
+    <div><em>All completed job executions and further details can be called up via the "Overview" page (see above).
+      </em></div>
+    <hr>
+
+</body>
+
+</html>

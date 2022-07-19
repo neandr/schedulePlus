@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">  -->
+
+  <title>piSchedule Job Eigenschaften</title>
+
+  <!--  CSS Setup -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="pischedule.css">
+  <style type="text/css">
+    body {
+      margin-left: 4%;
+      margin-right: 8%;
+    }
+
+    pre {
+      margin-left: 25px;
+      width: max-content;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container container-site">
+
+
+    <h2 id="pischedule-job">
+      <em><a href="/static/de.index">
+          <img src="/static/piSchedule.icon.png" class="pischeduleIcon">piSchedule
+          <small> Job Eigenschaften</small>
+        </a></em>
+    </h2>
+
+    <dev style="position: absolute; right: 8em;">
+
+      <p style="text-align: right; font-size: 0.8em; margin-top: -4em; padding-bottom: 2em;">
+        <a href="en.index.html">English Version
+          <img title="English" src="icon/flagUS.png" align="bottum"></a>
+      </p>
+      <p style="text-align: right; font-size: .8em; margin-top: -2.6em;">
+        <em>2020-11-04_23</em>
+      </p>
+      <p style="text-align: right; font-size: 1.2em; margin-top: -.5em;">
+        <em><strong>Definitionen, Beispiele, Test von Jobs </strong></em>
+      </p>
+    </dev>
+    <hr style="margin-top: 2em;">
+
+    <br />
+
+    <p>Schalten von Geräten mit <strong><em>piSchedule</em></strong> erfolgt mittels Kommandos -- genannt 'Jobs' , d.h. der 'Job' bestimmt wann welches Gerät wie schaltet. <br />Ein Job besteht aus folgenden Eigenschaften:</p>
+
+    <p><strong>Gerät</strong></p>
+
+    <p>Ein 'Job' bezieht sich immer auf ein Gerät. Der Gerätename ist <u>immer</u> anzugeben und zwar so wie in der Datei <code>data/sonoff.json</code> der schaltbaren Geräte vorgegeben.
+    </p>
+
+    <p>Die Syntax der Schaltanweisungen sind nachstehend beschrieben.
+      <br />
+      Die folgenden Beispiele zeigen die Steuerung eines bestimmten Gerätes, dieses ist in
+      <strong><em>sonoff.json</em></strong> definiert, für die Job Definition ist
+      nur der Geräte Name erforderlich:
+    </p>
+
+    <table cellspacing="2" cellpadding="2" border="1">
+      <tbody>
+        <tr>
+          <td valign="top">
+            <p>
+            <pre><code>  "XXXXXXX": {
+        "type": "S20",
+        "ip": 81,
+        "state": 0,
+        "info": "Flur/Regal"
+      }
+      </code></pre>
+            </p>
+          </td>
+          <td valign="top">Testx Testx Testx Testx<br>
+            <br>
+            Test1 Test2 Test3 Testx Testx
+
+            <p>
+              <small><strong>Hinweis </strong> Ein Beschreibung der <strong><em>sonoff.json</em></strong> Datei ist hier XXXXXXX gegeben.
+              </small>
+            </p>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <p><strong>Datum/Zeit</strong></p>
+    <p> Datum/Zeit lassen sich durch den Einsatz einer flexiblen Bibliothek in verschiedensten Datum/Zeit Formaten angeben.
+      <br /> Ein Job ohne Zeitangabe würde direkt mit Aufruf von <em>piSchedule</em> ausgeführt.
+    </p>
+
+    <p><strong>Zeitdifferenz / Zufallszeit</strong></p>
+    <p>Eine absolute Zeitangabe lässt sich durch eine Zeitdifferenz ändern. Die Zeitdifferenz <u>kann</u> zu der absoluten Zeitangabe addiert oder substrahiert werden. Außerdem <u>kann</u> ein Zufallszeitwert den Ein/Aus Schaltzeitpukt von Tag zu Tag
+      variieren.
+    </p>
+
+    <p><strong>Sonnenauf-/untergang</strong></p>
+    <p>Um eine Schaltzeit nach dem Sonnenauf- oder untergang zu orientieren, wird <u>statt</u> der absoluten Zeitangabe lediglich das Schlüsselwort 'sunrise' bzw 'sunset' angegeben. Zusätzlich <u>können</u> auch diese Angaben wieder mit einer
+      Zufallszeitdifferenz versehen werden. Die
+      GeoCoordinates <u>müssen</u> mit <em>piSchedule</em> Start/Installation gesetzt sein.</p>
+
+
+    <h4 id="zeitplan">Tagesplan</h4>
+    <p>Die definierten 'Jobs' mit den Angaben Gerät/Ein/Aus/Zeiten werden in einer Einstellungsdatei (INI), dem Tagesplan zusammengefasst. Mit Starten von <em>piSchedule</em> wird ein ausgewählter Tagesplan übergeben und gibt die Schaltpunkte für die
+      Geräte
+      an. Diese Einstellungsdatei ist ein einfaches Textformat.</p>
+
+    <p><strong>Text/Kommentare im Tagesplan</strong> <br />
+      Die INI Datei <u>kann</u> Kommentare in separaten Zeilen enthalten, diese Kommentarzeilen haben als erstes Nicht-Leerzeichen ein Sternchen.
+      Leerzeilen <u>können</u> eingefügt werden.</p>
+
+    <h4 id="zeitplan_change">Tagesplan Wechsel</h4>
+    <p>
+      Der Plan gilt jeweils für einen Tag. Beim Tageswechsel wird die INI Datei, die beim Starten übergeben wurde neu geladen. Zeiten, die vom Sonnenauf-/untergang abhängen und Zufallszeiten werden dabei neu berechnet.</p>
+
+    <h3 id="definitionen-eines-jobs">Job Definitionen </h3>
+    <p>
+      Ein <strong>'state'</strong> ODER <strong>'state_and_time'</strong> ist ERFORDERLICH, aber beide sind NICHT erlaubt für einen Gerätejob.</p>
+    <pre><code>  state            = "on" | "off"
+
+             ▸ Dies führt ein unmittelbares Schalten aus
+               in dem Moment, in dem der Befehl aufgerufen wird.
+
+  state_and_time   = switchDef *[;switchDef]
+      </code></pre>
+    <p><br></p>
+    <p><strong>'switchDef'</strong> MUSS einmal und KANN mehrmals vorhanden sein.</p>
+
+    <pre><code>  switchDef        = ( on|off,switchTime *[,deltaTime])
+
+             ▸ Ein Schaltzeitpunkt mit Angabe 'on' ODER 'off'
+             ▸ 'switchTime' Zeitwert
+
+             ▸ 'on'  MUSS Angabe von 'switchTime' haben
+             ▸ 'off' KANN 'switchTime haben, ohne folgt 'off' einer
+                 vorherigen 'on' Zeit.
+             ▸ 'deltaTime'  - KANN sein
+      </code></pre>
+    <p><br>
+      <strong>Zeit</strong> Formate
+    </p>
+    <pre><code>
+          switchTime   = MUSS sein, absolute Zeit oder 'sunrise|sunset',
+                        ▸  Formate entsprechen 'dateutil',
+                        ▸  'sunrise' und 'sunset' erfordern die Werte
+                            für 'latitude' und 'longitude', MÜSSEN in
+                            'piSchedule.prefs.json' definiert sein
+
+      deltaTime        = OPTIONAL,  '+|-|~|~-h:min'
+      		 KANN absolute Zeit oder Zufallszeit sein
+             Ein führendes Kontrollzeichen MUSS einmal angegeben werden,
+             Zeitspanne 'h:min' wird zu 'switchTime'
+              ▸  Plus  = addiert
+              ▸  Minus = substrahiert
+             Zufallszeit im Bereich von 'h:min' wird zu 'switchTime'
+              ▸  ~     = addiert
+              ▸  ~-    = substrahiert
+
+
+      </code></pre>
+
+
+
+
+    <h3 id="pischedule-job-beispiele"><em>piSchedule</em> Job Beispiele</h3>
+
+
+    <p>Die Beispiele zeigen die Steuerung eines bestimmten Gerätes: <br />
+    </p>
+    <p>In <strong><em>sonoff.json</em></strong> ist das Gerät definiert mit: </p>
+    <pre><code>  "Stecker": {
+    "type": "S20",
+    "ip": 81,
+    "state": 0,
+    "info": "Flur/Regal"
+  }
+</code></pre>
+
+    <h5>Einfaches, direktes Schalten</h5>
+    <pre><code>Stecker;on
+Stecker;off
+</code></pre>
+
+    <h5>Zeitverzögertes Schalten</h5>
+    <pre><code>Stecker;on,+:01;off,+:2:00
+</code></pre>
+    <p>'on' ist um eine Sekunde verzögert;nach 2 Minuten wird ausgeschaltet</p>
+
+    <h5>Zufallsverzögerung</h5>
+    <pre><code>Stecker;on,~01:00;
+</code></pre>
+    <p>Eine Zufallszeit zwischen 'jetzt' und einer Stunde verzögert das Einschalten</p>
+
+    <h5>Schalten mit Sonnenauf-/untergang</h5>
+    <pre><code>Stecker;on,sunrise,+:30:00;
+</code></pre>
+
+    <p>Einschaltzeit ist 30 Minuten nach Sonnenaufgang</p>
+    <pre><code>Stecker;on,sunset,~-:45:00;off,sunset,+3:15:00;
+</code></pre>
+    <p>Ein/Aus Zeitpunkt ist orientiert am Sonnenauf-/untergang. 'Ein' variiert zwischen 0 und 45 Minuten <strong><em>VOR</em></strong> Sonnenuntergang, 'Aus' erfolgt 3 Stunden und 15 Minutes <strong><em>NACH</em></strong> Sonnenuntergang</p>
+
+    <h5>Mehrere Schaltanweisungen mit einem Job</h5>
+    <pre><code>Stecker;on,19:45,~:10:00;off,21:05;on,21:30;off,+2:00:00;
+</code></pre>
+    <p>Hier werden zwei Zeitpaare für zwei Zeitabschnitte definiert. Das erste Einschalten erfolgt um 19:45Uhr mit einer Zufallszeit Verzögerung von 0 .. 10 Minuten. Das Abschalten erfolgt um 21:05Uhr. Die zweite Zeitspanne ist von 21:30 bis 23:30
+      mit absoluten Angaben. </p>
+
+
+    <h3 id="pischedule-befehle-testen"><em>piSchedule</em> Befehle testen</h3>
+    <p>Wenn <em>piSchedule</em> läuft, lassen sich die Kommandos über die Browser Seite testen:
+      <code> http://{server}:{port}/set?device[;state][;optional]</code>
+    </p>
+    <p>Beispiel</p>
+    <pre>  http://192.168.178.72:5005/set?Stecker;off </pre>
+
+    <p>Nach dem Aufruf öffnet die Seite "Aktueller Tagesplan" mit den aktiven, anstehenden Schaltvorgängen,
+      d.h. die aus der aktiven INI Datei errechneten Schaltvorgänge.
+    </p>
+
+    <p>
+      Ein/Aus Schaltbefehlen mit Zeitangaben, z.B.
+    </p>
+    <pre>  http://192.168.178.72:5005/set?Stecker;off,19:45 </pre>
+    <p>
+      zeigt der 'Aktueller Tagesplan' dann ebenfalls, vorausgesetzt die Zeitangaben sind valide.
+    </p>
+
+
+    <h4 id="log-dateien">Log Dateien</h4>
+
+    <p> Zur Überprüfung der Schaltvorgänge schreibt <em>piSchedule</em> LOG.Dateien
+
+    <ul>
+      <li id="tagesdatei"><strong>Tagesdatei</strong><br />
+
+        <span>Alle ausgeführten Ereignisse werden in eine Log-Datei geschrieben, die mit den aktuellen Tagesnamen bezeichnet wird, z.B. [Freitag.log] </span>
+      </li>
+
+      <li id="info-und-system-logs"><strong>Info und System Logs</strong><br />
+        <span>Siehe auch die Log-Dateien im Verzeichnis <code>schedulePlus/logs</code></p>
+
+          <p style="margin-left: 2.6em;">
+            `logs/piInfo.log`: Zeigt die Schaltaktivitäten<br />
+            `log System`: Mehr technisch orientiert, hilfreich im Fehlerfall.
+          </p>
+      </li>
+    </ul>
+
+    <hr />
+    <h5>Beispiel Dateien </h5>
+    <p> <strong><a href="piSchedule_example.ini">piSchedule.ini</a></strong> /
+
+      <strong><a href="sonoff_example.json">sonoff.json</a></strong> /
+
+      <strong><a href="prefs_example.json">piSchedule.prefs.master.json</a></strong>
+    </p>
+
+  </div> <!-- class container -->
+
+
+  <hr />
+  <div id="pFooter">
+    <p align="center" id="freeProjectDE" style="display:block">
+      &copy; gNeandr &nbsp; &nbsp; -- &nbsp; &nbsp;
+      <strong><em>piSchedule</em></strong> ist ein freies Open Source Projekt &nbsp; &nbsp; -- &nbsp; &nbsp; Feel free to use it.
+    </p>
+
+    <p align="center" id="donationDE" style="display:block">
+      <b><a href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=N3HLSJP5CVLSS' title='Danke für ihre Spende und die Benutzung von Paypal'>
+          <img alt='Donate button ' src='https://neandr.github.io/piSchedule/pic.Donate-40g.png' style='width:20px' />
+          &nbsp; &nbsp; Spende was <i>piSchedule</i> Dir wert ist.</a></b>
+      <br />
+      <a href="https://groups.google.com/forum/#!forum/piSchedule7">Kommentare, Fragen und Rückmeldungen im <i>piSchedule</i>
+        <strong>Forum</strong></a>
+    </p>
+  </div>
+
+</body>
+
+</html>
