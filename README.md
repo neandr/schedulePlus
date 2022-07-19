@@ -13,14 +13,14 @@ The browser is used not only for daily operation, but also for settings, log fil
 
 For detailed *Use and Installation* see the documentation, please visit
 
- * [Overview / Use and Setup](https://neandr.github.io/schedulePlus/en.scheduleOverview)   
- * [Job Setup](https://neandr.github.io/schedulePlus/en.scheduleEdit)   
+ * [Overview / Use and Setup](https://neandr.github.io/schedulePlus/en.scheduleOverview.html)   
+ * [Job Setup](https://neandr.github.io/schedulePlus/en.scheduleEdit.html)   
 
- * [Scheduling Examples](https://neandr.github.io/schedulePlus/en.scheduleExamples)   
- * [Scheduling Features](https://neandr.github.io/schedulePlus/en.scheduleFeatures)
+ * [Scheduling Examples](https://neandr.github.io/schedulePlus/en.scheduleExamples.html)   
+ * [Scheduling Features](https://neandr.github.io/schedulePlus/en.scheduleFeatures.html)
 
 
-Installation and Configuration of <em>schedule+</em> just follow [ ▸ this step](https://neandr.github.io/schedulePlus/en.schedulePlusSetup)
+Installation and Configuration of <em>schedule+</em> just follow [ ▸ this step](https://neandr.github.io/schedulePlus/en.schedulePlusSetup.html)
 
 <hr>
 
